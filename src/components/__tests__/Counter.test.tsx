@@ -16,8 +16,13 @@ test("should render a counter with a custom label", () => {
     expect(label).toBeInTheDocument();
 })
 
-test("rear cog should start at 15", () => {
+test("rear cog should start at 0", () => {
     const {getByTestId} = render(<RearCounter />);
+    const counter = getByTestId('counter');
+    expect(counter).toHaveTextContent('0');
+});
+test("rear cog should change to 15", () => {
+    const {getByTestId} = render(<RearCounter start={15} />);
     const counter = getByTestId('counter');
     expect(counter).toHaveTextContent('15');
 });
