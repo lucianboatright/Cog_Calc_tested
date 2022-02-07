@@ -1,16 +1,14 @@
 import React from 'react';
 import './App.css';
-import { RearCog } from './components/Cogs/RearCog';
+import { DriveTrain } from './components/Cogs/DriveTrain'
 
-export const BasicCogs = () => <RearCog onRearShift={count => count} />
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
         <div>Cog Calculator</div>
-        <RearCog
-        />
+        <DriveTrain />
       </header>
     </div>
   );

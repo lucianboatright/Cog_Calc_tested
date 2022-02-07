@@ -16,21 +16,21 @@ export function RearCog({
     rearIncroment = 1,
     readDecrement = 1,
     onRearShift
-} RearCogProps) {
+}: RearCogProps) {
 
     const [rearCog, setRearCog] = useState(15)
 
     function handleShiftUp() {
-        if (count < max) {
-            setRearCog(count + rearIncroment)
-            onRearShift(count + rearIncroment)
+        if (rearCog < max) {
+            setRearCog(rearCog + rearIncroment)
+            onRearShift(rearCog + rearIncroment)
         }
     }
 
     function handleShiftDown() {
-        if (count > min) {
-            setRearCog(count - readDecrement)
-            onRearShift(count - readDecrement)
+        if (rearCog > min) {
+            setRearCog(rearCog - readDecrement)
+            onRearShift(rearCog - readDecrement)
         }
     }
 
