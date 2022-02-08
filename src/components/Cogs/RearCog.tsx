@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { ChangeEvent, ChangeEventHandler, useState } from 'react';
 
 // define types of props being passed in
 export type RearCogProps = {
@@ -6,7 +6,7 @@ export type RearCogProps = {
     max?: number,
     rearIncroment?: number,
     readDecrement?: number,
-    onRearShift: (count: number ) => void
+    onRearShift: (rearCog: number ) => void
 } & React.HTMLAttributes<HTMLDivElement>
 
 // build Component and first set limits or amounts 
@@ -34,9 +34,9 @@ export function RearCog({
         }
     }
 
-    function handleInputShift(e) {
-        setRearCog(e.target.valueAsNumber)
-        onRearShift(e.target.valueAsNumber)
+    let handleInputShift = (event: ChangeEvent<HTMLInputElement>) => {
+        setRearCog(event.currentTarget.valueAsNumber)
+        onRearShift(event.currentTarget.valueAsNumber)
     }
     
     return (
@@ -44,6 +44,7 @@ export function RearCog({
             <div>Rear Cog</div>
             <button onClick={handleShiftUp}>+</button>
             <button onClick={handleShiftDown}>-</button>
+            <input type="number" value={rearCog} onChange={(e) => handleInputShift(e)}></input>
         </div>
     )
 
