@@ -40,11 +40,11 @@ export function RearCog({
     }
     
     return (
-        <div>
+        <div data-testid={'rearCog'}>
             <div>Rear Cog</div>
             <button onClick={handleShiftUp}>+</button>
             <button onClick={handleShiftDown}>-</button>
-            <input type="number" value={rearCog} onChange={(e) => handleInputShift(e)}></input>
+            <input type="number" min={min} max={max} value={rearCog} onChange={(e) => handleInputShift(e)}></input>
         </div>
     )
 
