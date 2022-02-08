@@ -35,13 +35,13 @@ There were other potential testing frameworks that may be included later like Es
 
 Clone the Repo and then run the comands below
 
-setup enviorment - $ yarn dev
+setup enviorment - $ npm start
 
-Run tests - $ npx jest
+Run tests - $ npm jest
 
 ## Planning
 
-<img src='readmeImages/planningOne.png' />
-<img src='readmeImages/planningTwo.png' />
+<img src='../readmeImages/planningOne.png' />
+<img src='../readmeImages/planningTwo.png' />
 
 /_ eslint-enable _/
