@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { RearCog } from './RearCog'
 
-export const BasicCogs = () => <RearCog onRearShift={rearCog => rearCog} />
+export const RearBasicCogs = () => <RearCog onRearShift={rearCog => rearCog} />
 
 export function DriveTrain() {
     const [rearCog, setRearCog] = useState(15)
