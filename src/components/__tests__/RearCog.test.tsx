@@ -29,6 +29,30 @@ it('should start with state of 15', () => {
     expect(rearBasicCogs).toHaveValue(15)
 })
 
-// it('should increase by 1 when shifted up', () => {
+it('should increase by 1 when shifted up', () => {
+    expect(rearBasicCogs).toHaveValue(15)
+    userEvent.click(rearIncromentCount)
+    expect(rearBasicCogs).toHaveValue(16)
+})
 
-// })
+it('should start with 15 but decres by one on shifting down', () => {
+    expect(rearBasicCogs).toHaveValue(15)
+    userEvent.click(readDecrementCount)
+    expect(rearBasicCogs).toHaveValue(14)
+})
+
+it('should not increase past 46 on up shifting', () => {
+    expect(rearBasicCogs).toHaveValue(15)
+    for(let i = 0; i < 40; i++) {
+        userEvent.click(rearIncromentCount)
+    }
+    expect(rearBasicCogs).toHaveValue(46)
+})
+
+it('should not decrease past 1 on down shifting', () => {
+    expect(rearBasicCogs).toHaveValue(15)
+    for(let i = 0; i < 18; i++) {
+        userEvent.click(readDecrementCount)
+    }
+    expect(rearBasicCogs).toHaveValue(1)
+})
