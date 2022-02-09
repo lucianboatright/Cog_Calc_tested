@@ -1,50 +1,18 @@
-import React, { ChangeEvent, ChangeEventHandler, useState } from 'react';
+import React, { useContext } from 'react';
+import RearCogProvider, {RearCogContext} from '../Context/rearCogContext';
 
-// define types of props being passed in
-export type RearCogProps = {
-    min?: number,
-    max?: number,
-    rearIncroment?: number,
-    readDecrement?: number,
-    onRearShift: (rearCog: number ) => void
-} & React.HTMLAttributes<HTMLDivElement>
+const RearCogCounter = () => {
+    const { rearCog, rearIncroment, rearDecroment } = useContext(RearCogContext);
 
-// build Component and first set limits or amounts 
-export function RearCog({
-    min = 1,
-    max = 46,
-    rearIncroment = 1,
-    readDecrement = 1,
-    onRearShift
-}: RearCogProps) {
-
-    const [rearCog, setRearCog] = useState(15)
-
-    function handleShiftUp() {
-        if (rearCog < max) {
-            setRearCog(rearCog + rearIncroment)
-            onRearShift(rearCog + rearIncroment)
-        }
-    }
-
-    function handleShiftDown() {
-        if (rearCog > min) {
-            setRearCog(rearCog - readDecrement)
-            onRearShift(rearCog - readDecrement)
-        }
-    }
-
-    let handleInputShift = (event: ChangeEvent<HTMLInputElement>) => {
-        setRearCog(event.currentTarget.valueAsNumber)
-        onRearShift(event.currentTarget.valueAsNumber)
-    }
-    
     return (
-        <div data-testid={'rearCog'}>
-            <button onClick={handleShiftUp}>+</button>
-            <button onClick={handleShiftDown}>-</button>
-            <input type="number" min={min} max={max} value={rearCog} onChange={(e) => handleInputShift(e)}></input>
+        <div>
+            <div className="RearCogComponent" data-testid="RearCogComponent" id='RearCogComponent' >Rear Cog: {rearCog}</div>
+            <button data-testid="rearShiftUp" onClick={rearIncroment}>+</button>
+            <button data-testid="rearShiftDown" onClick={rearDecroment}>-</button>
         </div>
     )
-
 }
+
+export default RearCogCounter;
+
+
