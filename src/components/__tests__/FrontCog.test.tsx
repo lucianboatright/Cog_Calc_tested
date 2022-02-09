@@ -1,9 +1,8 @@
-import React from "react";
 import { fireEvent, render, screen } from "@testing-library/react";
-import userEvent from '@testing-library/user-event'
-// import {RearCog} from '../Cogs/RearCog'
-import { FrontBasicCogs } from '../Cogs/DriveTrain'
+import App from '../../App';
+import userEvent from '@testing-library/user-event';
 
+it.todo('shoudl render the component')
 
 it.todo('should start with state of 50')
 
@@ -16,46 +15,57 @@ it.todo('should increase only to 64')
 it.todo('Should decrease only to 24')
 
 
-let frontBasicCogs
-let frontIncromentCount
-let frontDecrementCount
-
 beforeEach(() => {
-    render(<FrontBasicCogs />)
-    frontBasicCogs = screen.getByRole('spinbutton')
-    frontIncromentCount = screen.getByRole('button', { name: '+'})
-    frontDecrementCount = screen.getByRole('button', { name: '-'})
+    render(<App />)
+    // rearBasicCogs = screen.getByRole('spinbutton')
+    // const rearIncromentCount = screen.getByRole('button', { name: '+'})
+    // const readDecrementCount = screen.getByRole('button', { name: '-'})
 })
 
-it('should render with state of 50', () => {
-    expect(frontBasicCogs).toHaveValue(50)
-})
+test('renders component', () => {
+  const linkElement = screen.getByText(/Front Cog/i);
+  expect(linkElement).toBeInTheDocument();
+});
 
-it('should increment by 1 when shifted up', () => {
-    expect(frontBasicCogs).toHaveValue(50)
-    userEvent.click(frontIncromentCount)
-    expect(frontBasicCogs).toHaveValue(51)
-})
+test('shoudl render component', () => {
+  const linkElement = screen.getByTestId(/FrontCogComponent/i);
+  expect(linkElement).toHaveTextContent('Rear Cog')
+});
 
-it('should decrea by 1 on shift down', () => {
-    expect(frontBasicCogs).toHaveValue(50)
-    userEvent.click(frontDecrementCount)
-    expect(frontBasicCogs).toHaveValue(49)
-})
+test('front cog component should start with 50', () => {
+  const linkElement = screen.getByTestId(/FrontCogComponent/i);
+  expect(linkElement).toHaveTextContent('50')
+});
 
-it('shoudl not go smaller than 24 at the back', () => {
-    expect(frontBasicCogs).toHaveValue(50)
-    for(let i = 0; i < 30; i++) {
-        userEvent.click(frontDecrementCount)
+test('front cog increaases by 1 on shift up', () => {
+  const linkElement = screen.getByTestId(/FrontCogComponent/i);
+  const frontIncromentCount = screen.getByRole('button', { name: '+'})
+  userEvent.click(frontIncromentCount)
+  expect(linkElement).toHaveTextContent('51')
+});
+
+test('front cog increaases to max 64 on shift up', () => {
+    const linkElement = screen.getByTestId(/FrontCogComponent/i);
+    const rearIncromentCount = screen.getByRole('button', { name: '+'})
+    for(let i = 0; i < 40; i++) {
+      userEvent.click(rearIncromentCount)
     }
-    expect(frontBasicCogs).toHaveValue(24)
+    expect(linkElement).toHaveTextContent('64')
+});
+  
+test('front cog with decrease by 1 on down shift', () => {
+    const linkElement = screen.getByTestId(/FrontCogComponent/i);
+    const rearIncromentCount = screen.getByRole('button', { name: '-'})
+    userEvent.click(rearIncromentCount)
+    expect(linkElement).toHaveTextContent('59')
 })
-
-it('should shot at 64 on shifting up', () => {
-    expect(frontBasicCogs).toHaveValue(50)
-    for(let i = 0; i < 17; i++) {
-        userEvent.click(frontIncromentCount)
+  
+test('front cog decrese to max 24 on shift up', () => {
+    const linkElement = screen.getByTestId(/FrontCogComponent/i);
+    const rearIncromentCount = screen.getByRole('button', { name: '-'})
+    for(let i = 0; i < 40; i++) {
+    userEvent.click(rearIncromentCount)
     }
-    expect(frontBasicCogs).toHaveValue(64)
-})
-
+    expect(linkElement).toHaveTextContent('24')
+});
+  

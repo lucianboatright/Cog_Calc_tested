@@ -1,10 +1,4 @@
-import React, { ReactDOM } from 'react';
-import { renderHook } from '@testing-library/react-hooks'
 import { fireEvent, render, screen } from "@testing-library/react";
-import { RearCogContext } from '../Context/rearCogContext'
-import { RearCogCounter } from '../Cogs/RearCog'
-// import { shallow } from 'enzyme'
-
 import App from '../../App';
 import userEvent from '@testing-library/user-event';
 
@@ -70,7 +64,7 @@ test('rear cog increaases to max 46 on shift up', () => {
       userEvent.click(rearIncromentCount)
     }
     expect(linkElement).toHaveTextContent('9')
-  });
+});
 
 // ##########
 
