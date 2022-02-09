@@ -36,14 +36,14 @@ test('rear cog component should start with 15', () => {
 
 test('rear cog increaases by 1 on shift up', () => {
   const linkElement = screen.getByTestId(/RearCogComponent/i);
-  const rearIncromentCount = screen.getByRole('button', { name: '+'})
+  const rearIncromentCount = screen.getByTestId(/rearShiftUp/i)
   userEvent.click(rearIncromentCount)
   expect(linkElement).toHaveTextContent('16')
 });
 
 test('rear cog increaases to max 46 on shift up', () => {
   const linkElement = screen.getByTestId(/RearCogComponent/i);
-  const rearIncromentCount = screen.getByRole('button', { name: '+'})
+  const rearIncromentCount = screen.getByTestId(/rearShiftUp/i)
   for(let i = 0; i < 40; i++) {
     userEvent.click(rearIncromentCount)
   }
@@ -52,14 +52,14 @@ test('rear cog increaases to max 46 on shift up', () => {
 
 test('rear cog with decrease by 1 on down shift', () => {
     const linkElement = screen.getByTestId(/RearCogComponent/i);
-    const rearIncromentCount = screen.getByRole('button', { name: '-'})
+    const rearIncromentCount = screen.getByTestId(/rearShiftDown/i)
     userEvent.click(rearIncromentCount)
     expect(linkElement).toHaveTextContent('14')
 })
 
 test('rear cog increaases to max 46 on shift up', () => {
     const linkElement = screen.getByTestId(/RearCogComponent/i);
-    const rearIncromentCount = screen.getByRole('button', { name: '-'})
+    const rearIncromentCount = screen.getByTestId(/rearShiftDown/i)
     for(let i = 0; i < 40; i++) {
       userEvent.click(rearIncromentCount)
     }

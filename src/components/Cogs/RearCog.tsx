@@ -7,8 +7,8 @@ const RearCogCounter = () => {
     return (
         <div>
             <div className="RearCogComponent" data-testid="RearCogComponent" id='RearCogComponent' >Rear Cog: {rearCog}</div>
-            <button data-testid="rearShiftUp" onClick={rearIncroment}>+</button>
             <button data-testid="rearShiftDown" onClick={rearDecroment}>-</button>
+            <button data-testid="rearShiftUp" onClick={rearIncroment}>+</button>
         </div>
     )
 }
