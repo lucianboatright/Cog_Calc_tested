@@ -18,8 +18,8 @@ export const RearCogContext = createContext<RearCogContextState>(rearCogContextD
 const RearCogProvider: FC = ({ children }) => {
     const [rearCog, setRearCog] = useState<number>(rearCogContextDefaultValues.rearCog);
 
-    const rearIncroment = () => setRearCog(rearCog + 1)
-    const rearDecroment = () => setRearCog(rearCog - 1)
+    const rearIncroment = () => (rearCog < 46 ? setRearCog(rearCog + 1) : setRearCog(rearCog))
+    const rearDecroment = () => rearCog > 9 ? setRearCog(rearCog - 1) : setRearCog(rearCog)
 
     return (
         <RearCogContext.Provider
