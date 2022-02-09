@@ -28,8 +28,8 @@ export function FrontCog({
 
     function handleShiftDown() {
         if(frontCog > min) {
-            setFrontCog(frontCog + frontDecrement)
-            onFrontShift(frontCog + frontDecrement)
+            setFrontCog(frontCog - frontDecrement)
+            onFrontShift(frontCog - frontDecrement)
         }
     }
 
@@ -40,7 +40,6 @@ export function FrontCog({
 
     return (
         <div data-testid={'frontCog'}>
-            <div>Front Cog</div>
             <button onClick={handleShiftUp}>+</button>
             <button onClick={handleShiftDown}>-</button>
             <input type='number' min={min} max={max} value={frontCog} onChange={(e) => handleInputShift(e)}></input>

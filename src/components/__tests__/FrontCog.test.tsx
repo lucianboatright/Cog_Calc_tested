@@ -28,34 +28,34 @@ beforeEach(() => {
 })
 
 it('should render with state of 50', () => {
-    expect(FrontBasicCogs).toHaveValue(50)
+    expect(frontBasicCogs).toHaveValue(50)
 })
 
 it('should increment by 1 when shifted up', () => {
-    expect(FrontBasicCogs).toHaveValue(50)
+    expect(frontBasicCogs).toHaveValue(50)
     userEvent.click(frontIncromentCount)
-    expect(FrontBasicCogs).toHaveValue(51)
+    expect(frontBasicCogs).toHaveValue(51)
 })
 
 it('should decrea by 1 on shift down', () => {
-    expect(FrontBasicCogs).toHaveValue(50)
+    expect(frontBasicCogs).toHaveValue(50)
     userEvent.click(frontDecrementCount)
-    expect(FrontBasicCogs).toHaveValue(49)
+    expect(frontBasicCogs).toHaveValue(49)
 })
 
 it('shoudl not go smaller than 24 at the back', () => {
-    expect(FrontBasicCogs).toHaveValue(50)
+    expect(frontBasicCogs).toHaveValue(50)
     for(let i = 0; i < 30; i++) {
         userEvent.click(frontDecrementCount)
     }
-    expect(FrontBasicCogs).toHaveValue(24)
+    expect(frontBasicCogs).toHaveValue(24)
 })
 
 it('should shot at 64 on shifting up', () => {
-    expect(FrontBasicCogs).toHaveValue(50)
+    expect(frontBasicCogs).toHaveValue(50)
     for(let i = 0; i < 17; i++) {
         userEvent.click(frontIncromentCount)
     }
-    expect(FrontBasicCogs).toHaveValue(64)
+    expect(frontBasicCogs).toHaveValue(64)
 })
 

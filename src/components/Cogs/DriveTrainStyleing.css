@@ -1,0 +1,17 @@
+.drive-train {
+  background-color: brown;
+  display: inline;
+  width: 35rem;
+}
+
+.cogs-display {
+  display: inline-block;
+  margin: 0.5rem 1rem 0.5rem 1rem;
+  /* background-color: aqua; */
+  color: aqua;
+}
+
+.shifters {
+  display: inline-block;
+  margin: 0.5rem 0.5rem 1rem 0.5rem;
+}
