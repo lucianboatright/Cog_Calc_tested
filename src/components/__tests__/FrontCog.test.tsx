@@ -17,9 +17,6 @@ it.todo('Should decrease only to 24')
 
 beforeEach(() => {
     render(<App />)
-    // rearBasicCogs = screen.getByRole('spinbutton')
-    // const rearIncromentCount = screen.getByRole('button', { name: '+'})
-    // const readDecrementCount = screen.getByRole('button', { name: '-'})
 })
 
 test('renders component', () => {
@@ -46,25 +43,25 @@ test('front cog increaases by 1 on shift up', () => {
 
 test('front cog increaases to max 64 on shift up', () => {
     const linkElement = screen.getByTestId(/FrontCogComponent/i);
-    const rearIncromentCount = screen.getByTestId(/frontShiftUp/i)
+    const frontIncromentCount = screen.getByTestId(/frontShiftUp/i)
     for(let i = 0; i < 40; i++) {
-      userEvent.click(rearIncromentCount)
+      userEvent.click(frontIncromentCount)
     }
     expect(linkElement).toHaveTextContent('64')
 });
   
 test('front cog with decrease by 1 on down shift', () => {
     const linkElement = screen.getByTestId(/FrontCogComponent/i);
-    const rearIncromentCount = screen.getByTestId(/frontShiftDown/i)
-    userEvent.click(rearIncromentCount)
+    const frontIncromentCount = screen.getByTestId(/frontShiftDown/i)
+    userEvent.click(frontIncromentCount)
     expect(linkElement).toHaveTextContent('49')
 })
   
 test('front cog decrese to max 24 on shift up', () => {
     const linkElement = screen.getByTestId(/FrontCogComponent/i);
-    const rearIncromentCount = screen.getByTestId(/frontShiftDown/i)
+    const frontIncromentCount = screen.getByTestId(/frontShiftDown/i)
     for(let i = 0; i < 40; i++) {
-    userEvent.click(rearIncromentCount)
+    userEvent.click(frontIncromentCount)
     }
     expect(linkElement).toHaveTextContent('24')
 });
