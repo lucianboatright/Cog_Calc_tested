@@ -19,10 +19,10 @@ beforeEach(() => {
     // const readDecrementCount = screen.getByRole('button', { name: '-'})
 })
 
-test('renders component', () => {
-  const linkElement = screen.getByText(/Rear Cog/i);
-  expect(linkElement).toBeInTheDocument();
-});
+// test('renders component', () => {
+//   const linkElement = screen.getByText(/Rear Cog/i);
+//   expect(linkElement).toBeInTheDocument();
+// });
 
 test('shoudl render component', () => {
   const linkElement = screen.getByTestId(/RearCogComponent/i);

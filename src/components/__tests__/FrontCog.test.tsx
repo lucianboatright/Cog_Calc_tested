@@ -19,10 +19,10 @@ beforeEach(() => {
     render(<App />)
 })
 
-test('renders component', () => {
-  const linkElement = screen.getByText(/Front Cog/i);
-  expect(linkElement).toBeInTheDocument();
-});
+// test('renders component', () => {
+//   const linkElement = screen.getByText(/Front Cog/i);
+//   expect(linkElement).toBeInTheDocument();
+// });
 
 test('shoudl render component', () => {
   const linkElement = screen.getByTestId(/FrontCogComponent/i);
