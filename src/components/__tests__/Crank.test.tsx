@@ -14,48 +14,48 @@ beforeEach(() => {
 })
 
 test('should show rpm starting at 90rpm', () => {
-    const Cadance_rpm = screen.getByTestId(/Cadance_rpm/i)
-    expect(Cadance_rpm).toHaveTextContent('Gear Ratio: 90rpm')
+    const Display_Cadance = screen.getByTestId(/Display_Cadance/i)
+    expect(Display_Cadance).toHaveTextContent('Cadance: 90rpm')
 })
 
 test('should increase RPM by one at a time', () => {
-    const Cadance_rpm = screen.getByTestId(/Cadance_rpm/i)
+    const Display_Cadance = screen.getByTestId(/Display_Cadance/i)
 
     const IncreaseCadance = screen.getByTestId(/IncreaseCadance/i)
     userEvent.click(IncreaseCadance)
 
-    expect(Cadance_rpm).toHaveTextContent('91 rpm')
+    expect(Display_Cadance).toHaveTextContent('Cadance: 91rpm')
 
 })
 
 test('should decrese RPM by one at a time', () => {
-    const Cadance_rpm = screen.getByTestId(/Cadance_rpm/i)
+    const Display_Cadance = screen.getByTestId(/Display_Cadance/i)
 
-    const SlowCadance = screen.getByTestId(/SlowCadance/i)
-    userEvent.click(SlowCadance)
+    const DecreaseCadance = screen.getByTestId(/DecreaseCadance/i)
+    userEvent.click(DecreaseCadance)
 
-    expect(Cadance_rpm).toHaveTextContent('89 rpm')
+    expect(Display_Cadance).toHaveTextContent('Cadance: 89rpm')
 })
 
 test('should increase RPM to limit of 220rpm', () => {
-    const Cadance_rpm = screen.getByTestId(/Cadance_rpm/i)
+    const Display_Cadance = screen.getByTestId(/Display_Cadance/i)
 
     const IncreaseCadance = screen.getByTestId(/IncreaseCadance/i)
     for(let i = 0; i < 200; i++) {
         userEvent.click(IncreaseCadance)
     }
 
-    expect(Cadance_rpm).toHaveTextContent('220 rpm')
+    expect(Display_Cadance).toHaveTextContent('Cadance: 220rpm')
 })
 
 test('should decrese RPM by one at a time', () => {
-    const Cadance_rpm = screen.getByTestId(/Cadance_rpm/i)
+    const Display_Cadance = screen.getByTestId(/Display_Cadance/i)
 
-    const SlowCadance = screen.getByTestId(/SlowCadance/i)
+    const DecreaseCadance = screen.getByTestId(/DecreaseCadance/i)
     for(let i = 0; i < 50; i++) {
-        userEvent.click(SlowCadance)
+        userEvent.click(DecreaseCadance)
     }
 
-    expect(Cadance_rpm).toHaveTextContent('89 rpm')
+    expect(Display_Cadance).toHaveTextContent('Cadance: 40rpm')
 })
 
