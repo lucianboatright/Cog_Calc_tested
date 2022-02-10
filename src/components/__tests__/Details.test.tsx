@@ -27,7 +27,7 @@ test('renders component', () => {
 });
 
 test('shoudl render component', () => {
-  const linkElement = screen.getByTestId(/Details/i);
+  const linkElement = screen.getByTestId(/DetailsTitle/i);
   expect(linkElement).toHaveTextContent('Details')
 });
 

@@ -2,37 +2,70 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.Main_Body {
+  width: 100%;
+  height: 100px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  /* justify-content: space-between; */
 }
 
-.App-link {
-  color: #61dafb;
+.Detials {
+  border-left: 6px solid red;
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.DriveTrain {
+  padding-right: 2rem;
+  border-right: 5px solid blue;
+  flex-grow: 3;
+  /* margin-left: 20rem; */
+  /* display: inline; */
+}
+
+/* Inside Drive Train Component */
+
+.rearCogComponent {
+  display: inline-block;
+  padding: 2rem;
+}
+
+.frontCogComponent {
+  display: inline-block;
+  padding: 2rem;
+}
+
+/* Rear Cog Shifters */
+
+.RearShifters {
+  padding-top: 1rem;
+}
+
+.RearShiftDown {
+  height: 2rem;
+  width: 2rem;
+  border-radius: 10px;
+}
+
+.RearShiftUp {
+  height: 2rem;
+  width: 2rem;
+  border-radius: 10px;
+}
+
+/* Front Cog Shifters */
+.FrontShifters {
+  padding-top: 1rem;
+}
+
+.FrontShiftDown {
+  height: 2rem;
+  width: 2rem;
+  border-radius: 10px;
+}
+
+.FrontShiftUp {
+  height: 2rem;
+  width: 2rem;
+  border-radius: 10px;
 }
