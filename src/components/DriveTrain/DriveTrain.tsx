@@ -1,6 +1,7 @@
 import React from 'react';
 import RearCogCounter from './RearCog'
 import FrontCogCounter from './FrontCog';
+import Crank from './Crank';
 
 function DriveTrain() {
   return (
@@ -8,6 +9,9 @@ function DriveTrain() {
         <div className="Cogs_Section">
             <div className="rearCogComponent">
                 <RearCogCounter />
+            </div>
+            <div className='cadanceRpm'>
+                <Crank />
             </div>
             <div className="frontCogComponent">
                 <FrontCogCounter />

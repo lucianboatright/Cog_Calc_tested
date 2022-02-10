@@ -6,7 +6,8 @@ import RearCogProvider from './components/Context/rearCogContext';
 import FrontCogProvider from './components/Context/frontCogContext';
 // import FrontCogCounter from './components/Cogs/FrontCog';
 import Details from './components/Details/Details'
-import DriveTrain from './components/Cogs/DriveTrain';
+import DriveTrain from './components/DriveTrain/DriveTrain';
+import CrankProvider from './components/Context/CrankContext';
 
 
 function App() {
@@ -14,17 +15,19 @@ function App() {
     <div className="App">
       <RearCogProvider>
         <FrontCogProvider>
-          <div className="Title">
-            <div>Cog Calculator</div>
-          </div>
-          <div className="Main_Body">
-            <div className="DriveTrain">
-                <DriveTrain />
+          <CrankProvider>
+            <div className="Title">
+              <div>Cog Calculator</div>
             </div>
-            <div className="Detials">
-              <Details />
+            <div className="Main_Body">
+              <div className="DriveTrain">
+                  <DriveTrain />
+              </div>
+              <div className="Detials">
+                <Details />
+              </div>
             </div>
-          </div>
+          </CrankProvider>
         </FrontCogProvider>
       </RearCogProvider>
     </div>
