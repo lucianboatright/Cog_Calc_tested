@@ -9,18 +9,45 @@
   /* justify-content: space-between; */
 }
 
-.Detials {
-  border-left: 6px solid red;
+.DatailsSection {
+  border-left: 2px solid red;
   padding-left: 2rem;
   padding-right: 2rem;
 }
 
 .DriveTrain {
   padding-right: 2rem;
-  border-right: 5px solid blue;
+  /* border-right: 5px solid blue; */
   flex-grow: 3;
   /* margin-left: 20rem; */
   /* display: inline; */
+}
+
+/* Title Header */
+.Title {
+  padding: 1rem;
+  font-size: xx-large;
+  color: black;
+}
+
+/* Details Section */
+.DetailsTitle {
+  padding: 1rem;
+}
+
+.Cogs_Display {
+  padding: 1rem;
+  border-top: 2px black solid;
+}
+
+.Gear_ratio {
+  padding: 1rem;
+  border-top: 2px black solid;
+}
+
+.Cadance_rpm_Datails {
+  padding: 1rem;
+  border-top: 2px black solid;
 }
 
 /* Inside Drive Train Component */
@@ -75,6 +102,37 @@
   border-radius: 10px;
 }
 
+/* .FrontCog_Cog {
+  width: 200px;
+  height: 200px;
+  animation-name: rotate;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  border-radius: 50%;
+} */
+
+circle {
+  animation-duration: 3s;
+  animation-name: rotate;
+  animation-iteration-count: infinite;
+}
+
+svg {
+  /* border: 1px solid black; */
+  /*   width: 20%; */
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+    transform-origin: center;
+  }
+  to {
+    transform: rotate(360deg);
+    transform-origin: center;
+  }
+}
 /* Crank RPM */
 
 .IncreaseCadance {
