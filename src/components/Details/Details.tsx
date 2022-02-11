@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
-import { FrontCogContext } from '../Context/frontCogContext';
-import { RearCogContext } from '../Context/rearCogContext';
+import { FrontCogContext } from '../Context/FrontCogContext';
+import { RearCogContext } from '../Context/RearCogContext';
 import { CrankContext } from '../Context/CrankContext';
 
 

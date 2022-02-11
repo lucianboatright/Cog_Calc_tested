@@ -22,6 +22,10 @@ Front cog / Rear cog x wheel sizer (inc tyre) = Gear Inches
 Gear Ratio:
 Front cog / Rear cog = Gear Ratio
 
+Total Wheel Diameter = Rim Diameter + (Tyre Diameter \* 2) (in mm)
+
+Wheel Circumferance = Total Wheel Diameter \* PI
+
 Speed:
 Tyre Cuircumferance(m) x Gear Ratio x RPM x 60(mins) = Km/h
 
