@@ -1,16 +1,16 @@
 import React, { useContext } from 'react';
 import RearCogProvider, {RearCogContext} from '../Context/rearCogContext';
+import RearCogSvg from '../../Assets/Svg/RearCogSvg.svg'
 
 const RearCogCounter = () => {
     const { rearCog, rearIncroment, rearDecroment } = useContext(RearCogContext);
 
+    let RearCogSizing = (rearCog * 4)
+
     return (
         <div>
             <div className='RearCog_Cog'>
-                <svg height="100" width="100">
-                    <circle cx="50" cy="50" r={rearCog} stroke-dasharray="2 4" stroke="black" stroke-width="3" fill="aqua" />
-                    Sorry, your browser does not support inline SVG.  
-                </svg> 
+                <img height={RearCogSizing} width={RearCogSizing} src={RearCogSvg}  style={{ animation: "rotation 2s infinite linear"}}/>                
             </div>
             <div className="RearCogComponent" data-testid="RearCogComponent" id='RearCogComponent' >Rear Cog: {rearCog}</div>
             <div className='RearShifters'>
