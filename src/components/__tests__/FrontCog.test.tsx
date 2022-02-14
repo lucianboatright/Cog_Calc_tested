@@ -24,7 +24,7 @@ beforeEach(() => {
 //   expect(linkElement).toBeInTheDocument();
 // });
 
-test('shoudl render component', () => {
+test('should render component', () => {
   const linkElement = screen.getByTestId(/FrontCogComponent/i);
   expect(linkElement).toHaveTextContent('Front Cog')
 });

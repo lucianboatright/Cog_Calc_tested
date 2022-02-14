@@ -1,30 +1,83 @@
-import React, { useState, FC, createContext } from 'react'
 
-interface WheelContextState {
-    wheel: number;
-    changeWheel: () => void;
-}
+import React, { useEffect, useState } from "react";
 
-const WheelContextDefaultValues: WheelContextState = {
-    wheel: 622,
-    changeWheel: () => {},
-}
+type DropDownProps = {
+    wheelSizes: string[];
+    wheelDropDown: boolean;
+    toggleDropDown: Function;
+    wheelSelection: Function;
+};
 
-export const WheelContext = createContext<WheelContextState>(WheelContextDefaultValues)
+const DropDown: React.FC<DropDownProps> = ({
+    wheelSizes,
+    wheelSelection,
+}: DropDownProps) : JSX.Element => {
+    const [wheelDropDown, setWheelDropDown] = useState<boolean>(false)
 
-const WheelProvider: FC = ({ children }) => {
-    const [wheel, setWheel] = useState<number>(WheelContextDefaultValues.wheel)
+    const onClickHandeler = (city: string): void => {
+        wheelSelection(wheelSizes);
+    };
+
+    useEffect(() => {
+        setWheelDropDown(wheelDropDown);
+    }, [wheelDropDown]);
 
     return (
-        <WheelContext.Provider
-            value={{
-                wheel,
-                changeWheel,
-            }}
-        >
-            {children}
-        </WheelContext.Provider>
+        <>
+        <div>
+            <div>Wheel Selector</div>
+            <div className={wheelDropDown ? 'dropdown' : 'dropdown active'} >
+                {wheelSizes.map(
+                    (wheel: string, index: number): JSX.Element => {
+                        return (
+                            <p
+                                key={index}
+                                onClick={(): void => {
+                                    onClickHandeler(wheel);
+                                }}
+                            >
+
+                            </p>
+                        )
+                    }
+                )}
+            </div>
+        </div>
+        </>
     )
 }
 
-export default WheelProvider;
+export default DropDown;
+
+// import React, { useState, FC, createContext } from 'react'
+
+// interface WheelContextState {
+//     wheel: number;
+//     changeWheel: () => void;
+// }
+
+// const WheelContextDefaultValues: WheelContextState = {
+//     wheel: 622,
+//     changeWheel: () => {},
+// }
+
+// export const WheelContext = createContext<WheelContextState>(WheelContextDefaultValues)
+
+// const WheelProvider: FC = ({ children }) => {
+//     const [wheel, setWheel] = useState<number>(WheelContextDefaultValues.wheel)
+
+//     const changeWheel = () => setWheel()
+
+//     return (
+//         <WheelContext.Provider
+//             value={{
+//                 wheel,
+//                 changeWheel,
+//             }}
+//         >
+//             {children}
+//         </WheelContext.Provider>
+//     )
+// }
+
+// export default WheelProvider;

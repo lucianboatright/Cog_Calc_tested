@@ -10,7 +10,9 @@ import DriveTrain from './components/DriveTrain/DriveTrain';
 import CrankProvider from './components/Context/CrankContext';
 import WheelProvider from './components/Context/WheellContext';
 
-import WheelSizes from './components/Wheel/WheelSize'
+// import WheelSizes from './components/Wheel/WheelSize'
+import DropDownProps from './components/Context/WheellContext';
+import WheelMenue from './components/Wheel/WheelSize';
 
 
 function App() {
@@ -19,7 +21,7 @@ function App() {
       <RearCogProvider>
         <FrontCogProvider>
           <CrankProvider>
-            <WheelProvider>
+            <DropDownProps>
               <div className="Title">
                 <div>Cog Calculator</div>
               </div>
@@ -28,13 +30,13 @@ function App() {
                     <DriveTrain />
                 </div>
                 <div>
-                  <WheelSizes />
+                  <WheelMenue />
                 </div>
                 <div className="Detials">
                   <Details />
                 </div>
               </div>
-            </WheelProvider>
+            </DropDownProps>
           </CrankProvider>
         </FrontCogProvider>
       </RearCogProvider>
