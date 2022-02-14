@@ -8,11 +8,11 @@ import FrontCogProvider from './components/Context/FrontCogContext';
 import Details from './components/Details/Details'
 import DriveTrain from './components/DriveTrain/DriveTrain';
 import CrankProvider from './components/Context/CrankContext';
-import WheelProvider from './components/Context/WheellContext';
+// import WheelProvider from './components/Context/WheellContext';
 
 // import WheelSizes from './components/Wheel/WheelSize'
-import DropDownProps from './components/Context/WheellContext';
-import WheelMenue from './components/Wheel/WheelSize';
+// import DropDownProps from './components/Context/WheellContext';
+// import WheelMenue from './components/Wheel/WheelSize';
 
 
 function App() {
@@ -21,7 +21,7 @@ function App() {
       <RearCogProvider>
         <FrontCogProvider>
           <CrankProvider>
-            <DropDownProps>
+            {/* <DropDownProps> */}
               <div className="Title">
                 <div>Cog Calculator</div>
               </div>
@@ -30,13 +30,13 @@ function App() {
                     <DriveTrain />
                 </div>
                 <div>
-                  <WheelMenue />
+                  {/* <WheelMenue /> */}
                 </div>
                 <div className="Detials">
                   <Details />
                 </div>
               </div>
-            </DropDownProps>
+            {/* </DropDownProps> */}
           </CrankProvider>
         </FrontCogProvider>
       </RearCogProvider>

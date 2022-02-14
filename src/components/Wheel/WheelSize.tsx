@@ -1,56 +1,74 @@
-import React, { useState } from "react";
-import DropDown from "../Context/WheellContext";
+import React, { useContext } from 'react'
 
-const WheelMenue: React.FC = (): JSX.Element => {
-    const [wheelDropDown, setDropDown] = useState<boolean>(false);
-    const [selectWheel, setSelectWheel] = useState<string>("");
-    const wheelSizes = () => {
-        return ["28 Inch", "27 Inch", "29 Inch / 700c", "27.5 Inch / 650b", "26 Inch", "24 Inch", "16 Inch"];
-    };
+import { DashboardWidgetContext } from '../Context/WheellContext'
 
-    const toggleDropDown = () => {
-        setDropDown(!wheelDropDown);
-    };
+export const DashboardWidgetControls = ({ label }) => {
+  const { dataView, handleChangeView } = useContext(DashboardWidgetContext)
 
-    const dismissHAndler = (event: React.FocusEvent<HTMLButtonElement>): void => {
-        if (event.currentTarget === event.target) {
-            setDropDown(false);
-        }
-    }
-
-    const wheelSelection = (wheel: string): void => {
-        setSelectWheel(wheel);
-    }
-
-    return (
-        <>
-        <div>
-            <div>Wheel Selector</div>
-            <div>
-                {selectWheel ? `${selectWheel}` : "Plese select a wheel"}
-            </div>
-            <button
-                className={wheelDropDown ? "active" : undefined}
-                onClick={(e: React.FocusEvent<HTMLButtonElement>): void => 
-                    dismissHAndler(e)
-                }
-            >
-                <div>{selectWheel ? "Select: " + selectWheel : "Select ..."}</div>
-                {wheelDropDown && (
-                    <DropDown 
-                        wheelSizes={wheelSizes()}
-                        wheelDropDown={false}
-                        toggleDropDown={(): void => toggleDropDown()}
-                        wheelSelection={wheelSelection}
-                    />
-                )}
-            </button>
-        </div>
-        </>
-    )
+  return (
+    <div>
+      <select value={dataView} onChange={handleChangeView}>
+        <option value="bar_graph">Bar Graph</option>
+        <option value="line_chart">Line Chart</option>
+        <option value="table">Table</option>
+      </select>
+    </div>
+  )
 }
 
-export default WheelMenue;
+// import React, { useState } from "react";
+// import DropDown from "../Context/WheellContext";
+
+// const WheelMenue: React.FC = (): JSX.Element => {
+//     const [wheelDropDown, setDropDown] = useState<boolean>(false);
+//     const [selectWheel, setSelectWheel] = useState<string>("");
+//     const wheelSizes = () => {
+//         return ["28 Inch", "27 Inch", "29 Inch / 700c", "27.5 Inch / 650b", "26 Inch", "24 Inch", "16 Inch"];
+//     };
+
+//     const toggleDropDown = () => {
+//         setDropDown(!wheelDropDown);
+//     };
+
+//     const dismissHAndler = (event: React.FocusEvent<HTMLButtonElement>): void => {
+//         if (event.currentTarget === event.target) {
+//             setDropDown(false);
+//         }
+//     }
+
+//     const wheelSelection = (wheel: string): void => {
+//         setSelectWheel(wheel);
+//     }
+
+//     return (
+//         <>
+//         <div>
+//             <div>Wheel Selector</div>
+//             <div>
+//                 {selectWheel ? `${selectWheel}` : "Plese select a wheel"}
+//             </div>
+//             <button
+//                 className={wheelDropDown ? "active" : undefined}
+//                 onClick={(e: React.FocusEvent<HTMLButtonElement>): void => 
+//                     dismissHAndler(e)
+//                 }
+//             >
+//                 <div>{selectWheel ? "Select: " + selectWheel : "Select ..."}</div>
+//                 {wheelDropDown && (
+//                     <DropDown 
+//                         wheelSizes={wheelSizes()}
+//                         wheelDropDown={false}
+//                         toggleDropDown={(): void => toggleDropDown()}
+//                         wheelSelection={wheelSelection}
+//                     />
+//                 )}
+//             </button>
+//         </div>
+//         </>
+//     )
+// }
+
+// export default WheelMenue;
 
 
 
