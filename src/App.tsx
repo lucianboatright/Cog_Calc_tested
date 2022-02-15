@@ -14,6 +14,8 @@ import CrankProvider from './components/Context/CrankContext';
 // import DropDownProps from './components/Context/WheellContext';
 // import WheelMenue from './components/Wheel/WheelSize';
 
+import WheelDropDown from './components/Context/WheellContext';
+
 
 function App() {
   return (
@@ -30,7 +32,7 @@ function App() {
                     <DriveTrain />
                 </div>
                 <div>
-                  {/* <WheelMenue /> */}
+                  <WheelDropDown />
                 </div>
                 <div className="Detials">
                   <Details />

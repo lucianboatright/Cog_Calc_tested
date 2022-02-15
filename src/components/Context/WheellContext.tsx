@@ -1,23 +1,124 @@
-import React, { useState, createContext } from 'react'
 
-export const DashboardWidgetContext = createContext()
+import React, { createContext } from "react";
 
-export const DashboardWidgetProvider = ({ children }) => {
-  const [dataView, setDataView] = useState('table')
-
-  const handleChangeView = value => {
-    setDataViewView(value)
-  }
-
-  const value = {
-    dataView,
-    handleChangeView,
-  }
-
-  return <DashboardWidgetContext.Provider value={value}>{children}</DashboardWidgetContext.Provider>
+interface SelectContext {
+  wheelSelect: (name: string) => void;
 }
 
+const SelectContextDefaultValues: SelectContext = {
+    wheelSelect: (name: string) => {},
 
+}
+export const WheelContext = createContext<SelectContext>(SelectContextDefaultValues);
+
+// WheelContext.displayName = "SelectContext";
+
+const useSelectState = () => {
+  const context = React.useContext(WheelContext);
+  if (!context) throw new Error("MUST BE WITHIN");
+
+  return context;
+};
+
+export const Select: React.FC<{ onChange: (value: string) => void }> = ({
+  children,
+  onChange
+}) => {
+  const [selected, setSelected] = React.useState<string>("");
+  const [show, setShow] = React.useState<boolean>(false);
+
+  const wheelSelect = (value: string) => {
+    setSelected(value);
+    setShow(false);
+  };
+
+  const toggle = () => {
+    setShow(!show);
+  };
+
+  React.useEffect(() => {
+    onChange(selected);
+  }, [selected, onChange]);
+
+  return (
+    <div className="wrapper-select">
+      <div className="input-div">
+        {<div onClick={toggle}>{selected || "Select"} </div>}
+      </div>
+
+      <WheelContext.Provider value={{ wheelSelect }}>
+        {show && (
+          <ul className="list-wrapper">
+            {React.Children.map(children, (child) => {
+              return <li className="list-item">{child}</li>;
+            })}
+          </ul>
+        )}
+      </WheelContext.Provider>
+    </div>
+  );
+};
+
+const Option: React.FC<{ value: string }> = ({ children, value }) => {
+  const { wheelSelect } = useSelectState();
+  return <span onClick={() => wheelSelect(value)}>{children}</span>;
+};
+
+const runAll = (functionList: (Function | undefined)[]) => {
+  return (props: any) => {
+    functionList.forEach((fn) => {
+      if (fn) {
+        fn(props);
+      }
+    });
+  };
+};
+
+interface PropsUseSelect {
+  onChange?: (value: string) => any;
+}
+
+export const useSelect = () => {
+  const [value, setValue] = React.useState("");
+
+  const handleChange = (value: string) => {
+    setValue(value);
+  };
+
+  const getSelectProps = ({ onChange, ...props }: PropsUseSelect) => {
+    return {
+      onChange: runAll([handleChange, props && onChange]),
+      value,
+      ...props
+    };
+  };
+
+  // selectProps == prop getter
+  return {
+    value,
+    handleChange,
+    getSelectProps
+  };
+};
+
+export default function WheelDropDown() {
+    const { getSelectProps } = useSelect();
+  
+    return (
+      <div className="WheelDropDown">
+        <h1>Select Wheel Size</h1>
+        <Select {...getSelectProps({})}>
+          <Option value={"28 Inch"}>28 Inch</Option>
+          <Option value={"27 Inch"}>27 Inch</Option>
+          <Option value={"700c / 29 Inch"}>700c / 29 Inch</Option>
+          <Option value={"650b / 27.5 Inch"}>650b / 27.5 Inch</Option>
+          <Option value={"26 Inch"}>26 Inch</Option>
+          <Option value={"24 Inch"}>24 Inch</Option>
+          <Option value={"16 Inch"}>16 Inch</Option>
+        </Select>
+      </div>
+    );
+  }
 
 // import React from "react";
 
