@@ -8,6 +8,7 @@ import FrontCogProvider from './components/Context/FrontCogContext';
 import Details from './components/Details/Details'
 import DriveTrain from './components/DriveTrain/DriveTrain';
 import CrankProvider from './components/Context/CrankContext';
+import WheelSelect from './components/Context/WheellContext'
 // import WheelProvider from './components/Context/WheellContext';
 
 // import WheelSizes from './components/Wheel/WheelSize'
@@ -15,6 +16,7 @@ import CrankProvider from './components/Context/CrankContext';
 // import WheelMenue from './components/Wheel/WheelSize';
 
 import WheelDropDown from './components/Context/WheellContext';
+// import { Select } from './components/Context/WheellContext';
 
 
 function App() {

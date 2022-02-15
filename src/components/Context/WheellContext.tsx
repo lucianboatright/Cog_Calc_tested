@@ -1,5 +1,5 @@
 
-import React, { createContext } from "react";
+import React, {createContext} from "react";
 
 interface SelectContext {
   wheelSelect: (name: string) => void;
@@ -11,7 +11,7 @@ const SelectContextDefaultValues: SelectContext = {
 }
 export const WheelContext = createContext<SelectContext>(SelectContextDefaultValues);
 
-// WheelContext.displayName = "SelectContext";
+WheelContext.displayName = "SelectContext";
 
 const useSelectState = () => {
   const context = React.useContext(WheelContext);
@@ -20,7 +20,7 @@ const useSelectState = () => {
   return context;
 };
 
-export const Select: React.FC<{ onChange: (value: string) => void }> = ({
+const Select: React.FC<{ onChange: (value: string) => void }> = ({
   children,
   onChange
 }) => {
@@ -58,6 +58,8 @@ export const Select: React.FC<{ onChange: (value: string) => void }> = ({
     </div>
   );
 };
+
+
 
 const Option: React.FC<{ value: string }> = ({ children, value }) => {
   const { wheelSelect } = useSelectState();
