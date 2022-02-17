@@ -1,21 +1,3 @@
-import React, { useState, createContext } from 'react'
-
-export const DashboardWidgetContext = createContext()
-
-export const DashboardWidgetProvider = ({ children }) => {
-  const [dataView, setDataView] = useState('table')
-
-  const handleChangeView = value => {
-    setDataViewView(value)
-  }
-
-  const value = {
-    dataView,
-    handleChangeView,
-  }
-
-  return <DashboardWidgetContext.Provider value={value}>{children}</DashboardWidgetContext.Provider>
-}
 
 
 // import React, {

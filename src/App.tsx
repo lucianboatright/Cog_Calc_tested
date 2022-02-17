@@ -11,7 +11,7 @@ import CrankProvider from './components/Context/CrankContext';
 // import WheelProvider from './components/Context/WheellContext';
 
 
-import { DashboardWidget } from './components/Wheel/WheelWidget';
+import WheelSize from './components/Wheel/WheelSize';
 
 
 function App() {
@@ -20,7 +20,7 @@ function App() {
       <RearCogProvider>
         <FrontCogProvider>
           <CrankProvider>
-            {/* <SelectProvider > */}
+            {/* <WheelProvider > */}
               <div className="Title">
                 <div>Cog Calculator</div>
               </div>
@@ -29,19 +29,13 @@ function App() {
                     <DriveTrain />
                 </div>
                 <div>
-                <DashboardWidget title="Distance of Planets to the Sun">
-                  <div>Hello</div>
-                </DashboardWidget>
-
-                <DashboardWidget title="Time Dilation and the Speed of Light">
-                <div>Hello</div>
-                </DashboardWidget>
+                    <WheelSize />
                 </div>
                 <div className="Detials">
                   <Details />
                 </div>
               </div>
-            {/* </SelectProvider> */}
+            {/* </WheelProvider> */}
           </CrankProvider>
         </FrontCogProvider>
       </RearCogProvider>

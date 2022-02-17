@@ -1,17 +1,43 @@
-import React, { useContext } from 'react'
+import React from 'react';
 
-import { DashboardWidgetContext } from '../Context/WheellContext'
+const WheelSize = () => {
+    const options = [
+      { label: 'Fruit', value: 'fruit' },
+      { label: 'Vegetable', value: 'vegetable' },
+      { label: 'Meat', value: 'meat' },
+    ];
+  
+    const [value, setValue] = React.useState('fruit');
+  
+    const handleChange = (event) => {
+      setValue(event.target.value);
+    };
+  
+    return (
+      <div>
+        <Dropdown
+          label="What do we eat?"
+          options={options}
+          value={value}
+          onChange={handleChange}
+        />
+  
+        <p>We eat {value}!</p>
+      </div>
+    );
+  };
+  
+  const Dropdown = ({ label, value, options, onChange }) => {
+    return (
+      <label>
+        {label}
+        <select value={value} onChange={onChange}>
+          {options.map((option) => (
+            <option value={option.value}>{option.label}</option>
+          ))}
+        </select>
+      </label>
+    );
+  };
 
-export const DashboardWidgetControls = ({ label }) => {
-  const { dataView, handleChangeView } = useContext(DashboardWidgetContext)
-
-  return (
-    <div>
-      <select value={dataView} onChange={handleChangeView}>
-        <option value="bar_graph">Bar Graph</option>
-        <option value="line_chart">Line Chart</option>
-        <option value="table">Table</option>
-      </select>
-    </div>
-  )
-}
+  export default WheelSize;
