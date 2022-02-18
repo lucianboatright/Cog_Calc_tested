@@ -13,11 +13,14 @@ export const StyledContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 2rem;
+  margin-right: 2rem;
 `;
 
 export const StyledDropDownContainer = styled.div`
   position: relative;
-  min-width: 350px;
+  min-width: 150px;
+  margin-top: 0rem
 `;
 
 export const StyledDropDownButton = styled.button`
@@ -33,6 +36,7 @@ export const StyledDropDownButton = styled.button`
   border-radius: 15px;
   cursor: pointer;
   z-index: 99;
+  margin-top: 1rem;
 `;
 
 export const StyledDropDownButtonArrow = styled.div<Active>`

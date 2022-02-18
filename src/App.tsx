@@ -97,7 +97,7 @@ function App() {
                 <div className="DriveTrain">
                     <DriveTrain />
                 </div>
-                <div>
+                <div className='wheel_selection'>
                   <div>Wheel Size: {text}</div>
                     <WheelSize
                       label="Select size"
@@ -107,10 +107,11 @@ function App() {
                       handleChangeText={(e: string) => setText(e)}
                       // handleChange={(e: string) => setText(e)}
                     />
-                {/* </div>
-                <div> */}
+                </div>
+                <div>
                 <div>Tyre Size: {tyreText}</div>
                   <TyreSize
+                  
                     label="Select size"
                     placeholder="Select size"
                     options={tyreOptions}
