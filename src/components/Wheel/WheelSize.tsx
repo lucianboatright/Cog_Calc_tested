@@ -1,43 +1,123 @@
-import React from 'react';
+import {
+    StyledContainer,
+    StyledDropDownButton,
+    StyledDropDownButtonArrow,
+    StyledDropDownContainer,
+    StyledDropDownDrawer,
+    StyledDropdownLabel,
+    StyledDropDownOption,
+    StyledDropDownText
+  } from "./styled";
+  import { FC, useState, createContext } from "react";
+  
+  type Options = {
+    text: string;
+    value: string;
+  };
 
-const WheelSize = () => {
-    const options = [
-      { label: 'Fruit', value: 'fruit' },
-      { label: 'Vegetable', value: 'vegetable' },
-      { label: 'Meat', value: 'meat' },
-    ];
   
-    const [value, setValue] = React.useState('fruit');
+  interface DropdownProps {
+    options: Array<Options>;
+    label?: string;
+    placeholder: string;
+    handleChange: Function;
+    handleChangeText: Function;
+  }
   
-    const handleChange = (event) => {
-      setValue(event.target.value);
-    };
+  const WheelSize: FC<DropdownProps> = ({
+    options = [],
+    handleChange,
+    handleChangeText,
+    label,
+    placeholder
+  }) => {
+    const [value, setValue] = useState<string>(placeholder);
+    const [text, setText] = useState<string>(placeholder)
+    const [active, setActive] = useState<boolean>(false);
   
     return (
-      <div>
-        <Dropdown
-          label="What do we eat?"
-          options={options}
-          value={value}
-          onChange={handleChange}
-        />
-  
-        <p>We eat {value}!</p>
-      </div>
+      <StyledContainer>
+        <StyledDropDownContainer>
+          {label && <StyledDropdownLabel>{label}</StyledDropdownLabel>}
+          <StyledDropDownButton
+            disabled={options.length === 0}
+            onClick={() => setActive(!active)}
+          >
+            <StyledDropDownText active={options.length === 0}>
+              {options.length === 0
+                ? "Empty"
+                : options.filter((e) => value === e.value)[0]?.text || value}
+            </StyledDropDownText>
+            <StyledDropDownButtonArrow active={active} />
+          </StyledDropDownButton>
+          <StyledDropDownDrawer active={active}>
+            {options.map((option: Options, index: number) => (
+              <StyledDropDownOption
+                key={index}
+                onClick={() => {
+                  setValue(option.value);
+                  setText(option.text)
+                  handleChange(option.value);
+                  handleChangeText(option.text)
+                  setActive(false);
+                }}
+                selected={value === option.value}
+              >
+                {option.text}
+              </StyledDropDownOption>
+            ))}
+          </StyledDropDownDrawer>
+        </StyledDropDownContainer>
+      </StyledContainer>
     );
   };
   
-  const Dropdown = ({ label, value, options, onChange }) => {
-    return (
-      <label>
-        {label}
-        <select value={value} onChange={onChange}>
-          {options.map((option) => (
-            <option value={option.value}>{option.label}</option>
-          ))}
-        </select>
-      </label>
-    );
-  };
-
   export default WheelSize;
+  
+
+
+// import React from 'react';
+
+// const WheelSize = () => {
+//     const options = [
+//       { label: 'Fruit', value: 'fruit' },
+//       { label: 'Vegetable', value: 'vegetable' },
+//       { label: 'Meat', value: 'meat' },
+//     ];
+  
+//     const [value, setValue] = React.useState('fruit');
+  
+//     const handleChange = (event) => {
+//       setValue(event.target.value);
+//     };
+  
+//     return (
+//       <div>
+//         <Dropdown
+//           label="What do we eat?"
+//           options={options}
+//           value={value}
+//           onChange={handleChange}
+//         />
+  
+//         <p>We eat {value}!</p>
+//       </div>
+//     );
+//   };
+
+
+  
+//   const Dropdown = ({ label, value, options, onChange }) => {
+//     return (
+//       <label>
+//         {label}
+//         <select value={value} onChange={onChange}>
+//           {options.map((option) => (
+//             <option value={option.value}>{option.label}</option>
+//           ))}
+//         </select>
+//       </label>
+//     );
+//   };
+
+//   export default WheelSize;

@@ -9,7 +9,7 @@ import { CrankContext } from '../Context/CrankContext';
 // import './components/Wheel/wheelstyles.css';
 
 
-const Detail = () => {
+const Detail = ({ wheelSize, wheelType }) => {
     const {frontCog} = useContext(FrontCogContext)
     const {rearCog} = useContext(RearCogContext)
     const {crankRpm} = useContext(CrankContext)
@@ -27,7 +27,7 @@ const Detail = () => {
             <div className='Cogs_Display'><span data-testid="Details_Cogs_Rear">Rear Cog: {rearCog} - </span><span data-testid="Details_Cogs_Front">Front Cog: {frontCog}</span></div>
             <div className='Gear_ratio' data-testid="Gear_ratio">Gear Ratios {GearRatio}</div>
             <div className='Cadance_rpm_Datails' data-testid="Cadance_rpm_Datails">Cadance: {crankRpm}rpm </div>
-            {/* <div>value: {this.props.data}</div> */}
+            <div>value: {wheelType}</div>
         </div>
     )
 }
