@@ -11,26 +11,28 @@ import Details from './components/Details/Details'
 import DriveTrain from './components/DriveTrain/DriveTrain';
 import CrankProvider from './components/Context/CrankContext';
 // import WheelProvider from './components/Context/WheellContext';
+import WheelIndex from './components/Wheel/WheelIndex';
 
 
 
 function App() {
 
-  const [value, setValue] = useState<string>("");
-  const [text, setText] = useState<string>("")
+  // const [value, setValue] = useState<string>("");
+  // const [text, setText] = useState<string>("")
 
   const [tyreValue, setTyreValue] = useState<string>("");
   const [tyreText, setTyreText] = useState<string>("")
 
-  const wheelOptions = [
-    { text: "28 Inch", value: "635" },
-    { text: "27 Inch", value: "630" },
-    { text: "29 Inch / 700c", value: "622" },
-    { text: "26 Inch", value: "559" },
-    { text: "650b / 27.5 Inch", value: "584" },
-    { text: "24 Inch", value: "559" },
-    { text: "16 Inch", value: "349" }
-  ];
+  // const wheelOptions = [
+  //   { text: "28 Inch", value: "635" },
+  //   { text: "27 Inch", value: "630" },
+  //   { text: "29 Inch / 700c", value: "622" },
+  //   { text: "26 Inch", value: "559" },
+  //   { text: "650b / 27.5 Inch", value: "584" },
+  //   { text: "24 Inch", value: "559" },
+  //   { text: "16 Inch", value: "349" }
+  // ];
+
   const tyreOptions = [
     { text: "20mm", value: "20.00" },
     { text: "23mm", value: "23.00" },
@@ -80,9 +82,15 @@ function App() {
     { text: "4.90 Inch", value: "121.92" },
     { text: "5.00 Inch", value: "124.46" },
   ];
-  console.log(value);
-  console.log(text);
-  // console.log(text);
+
+  const [data, setData] = useState('');
+
+  const childToParent = (wheelData) => {
+   setData(wheelData)
+  }
+
+  
+  console.log(data);
 
   return (
     <div className="App">
@@ -97,9 +105,11 @@ function App() {
                 <div className="DriveTrain">
                     <DriveTrain />
                 </div>
-                <div className='wheel_selection'>
-                  <div>Wheel Size: {text}</div>
+                <WheelIndex childToParent={childToParent}/>
+                {/* <div className='wheel_selection'>
+                  <div data-testid="WheelSize_Display">Wheel Size: {text}</div>
                     <WheelSize
+                      data-testid="WheelSize_Dropdown"
                       label="Select size"
                       placeholder="Select size"
                       options={wheelOptions}
@@ -107,7 +117,7 @@ function App() {
                       handleChangeText={(e: string) => setText(e)}
                       // handleChange={(e: string) => setText(e)}
                     />
-                </div>
+                </div> */}
                 <div>
                 <div>Tyre Size: {tyreText}</div>
                   <TyreSize
@@ -121,7 +131,7 @@ function App() {
                   />
                 </div>
                 <div className="Detials">
-                  <Details wheelSize={value} wheelType={text} tyreSize={tyreValue} tyreText={tyreText} />
+                  <Details tyreSize={tyreValue} tyreText={tyreText} />
                 </div>
               </div>
             {/* </WheelProvider> */}

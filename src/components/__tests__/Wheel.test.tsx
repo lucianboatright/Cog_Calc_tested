@@ -1,6 +1,9 @@
-import { fireEvent, render, screen } from "@testing-library/react";
+import { cleanup, fireEvent, render, screen } from "@testing-library/react";
 import App from "../../App";
 import userEvent from "@testing-library/user-event";
+
+import { WheelSize } from '../Wheel/WheelSize'
+
 
 it.todo('should test that the components mounts')
 
@@ -56,12 +59,44 @@ it.todo('will be able to select between 20-48c ')
 
 it.todo('should change on selected wheel size and tyre size')
 
+const wheelOptions = [
+    { text: "28 Inch", value: "635" },
+    { text: "27 Inch", value: "630" },
+    { text: "29 Inch / 700c", value: "622" },
+    { text: "26 Inch", value: "559" },
+    { text: "650b / 27.5 Inch", value: "584" },
+    { text: "24 Inch", value: "559" },
+    { text: "16 Inch", value: "349" }
+];
+
+const WheelSize_Component = () => (
+    <WheelSize
+    data-testid="WheelSize_Dropdown"
+    label="Select size"
+    placeholder="Select size"
+    options={wheelOptions}
+    handleChange={(e: string) => setValue(e)}
+    handleChangeText={(e: string) => setText(e)}
+    // handleChange={(e: string) => setText(e)}
+  />
+);
 
 beforeEach(() => {
     render(<App />)
 })
 
+afterEach(() => {
+    cleanup()
+})
+
 test('should mount component', () => {
-    const Wheel = screen.getByTestId(/Wheel_Selector/i)
-    expect(Wheel).toHaveTextContent('Wheel: 700c')
+    const wheelDisplay = screen.getByTestId(/WheelSize_Display/i)
+    expect(wheelDisplay).toHaveTextContent('Wheel Size:')
+})
+
+test('should start with no value diosplayed', () => {
+    const { getByTestId } = render(<WheelSize_Component />);
+    const dropdown = getByTestId('WheelSize_Dropdown')
+    const display = dropdown.children[0];
+    expect(display.textContent).toBe(wheelOptions[0].text)
 })
