@@ -7,7 +7,7 @@ import {
     StyledDropdownLabel,
     StyledDropDownOption,
     StyledDropDownText
-  } from "./styled";
+  } from "../Wheel/styled";
   import { FC, useState, createContext } from "react";
   
   type Options = {
@@ -21,6 +21,7 @@ import {
     label?: string;
     placeholder: string;
     handleChange: Function;
+    onChange: Function;
     handleChangeText: Function;
   }
   
@@ -28,6 +29,7 @@ import {
     options = [],
     handleChange,
     handleChangeText,
+    onChange,
     label,
     placeholder
   }) => {
@@ -40,6 +42,7 @@ import {
         <StyledDropDownContainer>
           {label && <StyledDropdownLabel>{label}</StyledDropdownLabel>}
           <StyledDropDownButton
+          data-testid="TyreSize_Dropdown_Button"
             disabled={options.length === 0}
             onClick={() => setActive(!active)}
           >
@@ -50,9 +53,10 @@ import {
             </StyledDropDownText>
             <StyledDropDownButtonArrow active={active} />
           </StyledDropDownButton>
-          <StyledDropDownDrawer active={active}>
+          <StyledDropDownDrawer active={active} data-testid="TyreSize_Dropdown_Drawer">
             {options.map((option: Options, index: number) => (
               <StyledDropDownOption
+                data-testid="TyreSize_Dropdown_Styled"
                 key={index}
                 onClick={() => {
                   setValue(option.value);
@@ -60,6 +64,7 @@ import {
                   handleChange(option.value);
                   handleChangeText(option.text)
                   setActive(false);
+                  onChange(option.text)
                 }}
                 selected={value === option.value}
               >

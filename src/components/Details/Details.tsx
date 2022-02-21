@@ -9,7 +9,7 @@ import { CrankContext } from '../Context/CrankContext';
 // import './components/Wheel/wheelstyles.css';
 
 
-const Detail = ({ tyreSize, tyreText, wheelSize }) => {
+const Detail = ({ tyreText, wheelSize }) => {
     const {frontCog} = useContext(FrontCogContext)
     const {rearCog} = useContext(RearCogContext)
     const {crankRpm} = useContext(CrankContext)

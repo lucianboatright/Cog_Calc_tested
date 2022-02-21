@@ -6,7 +6,7 @@ import Detail from '../Details/Details';
 
 
 
-function WheelIndex({childToParent}) {
+function WheelIndex({childToParentWheel}) {
 
   const [value, setValue] = useState<string>("");
   const [text, setText] = useState<string>("")
@@ -31,7 +31,7 @@ function WheelIndex({childToParent}) {
             options={wheelOptions}
             handleChange={(e: string) => setValue(e)}
             handleChangeText={(e: string) => setText(e)}
-            onChange={(e: string) => childToParent}
+            onChange={(e: string) => childToParentWheel(e)}
             // handleChange={(e: string) => setText(e)}
         />
 
