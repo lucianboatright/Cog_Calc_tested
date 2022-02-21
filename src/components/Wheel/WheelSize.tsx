@@ -42,6 +42,7 @@ import {
         <StyledDropDownContainer>
           {label && <StyledDropdownLabel>{label}</StyledDropdownLabel>}
           <StyledDropDownButton
+            data-testid="WheelSize_Dropdown_Button"
             disabled={options.length === 0}
             onClick={() => setActive(!active)}
           >
@@ -52,9 +53,10 @@ import {
             </StyledDropDownText>
             <StyledDropDownButtonArrow active={active} />
           </StyledDropDownButton>
-          <StyledDropDownDrawer active={active}>
+          <StyledDropDownDrawer active={active} data-testid="WheelSize_Dropdown_Drawer">
             {options.map((option: Options, index: number) => (
               <StyledDropDownOption
+                data-testid="WheelSize_Dropdown_Styled"
                 key={index}
                 onClick={() => {
                   setValue(option.value);

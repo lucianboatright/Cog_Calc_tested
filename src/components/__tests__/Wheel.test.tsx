@@ -1,8 +1,8 @@
-import { cleanup, fireEvent, render, screen } from "@testing-library/react";
+import { cleanup, fireEvent, getAllByRole, getAllByTestId, getByTestId, render, screen } from "@testing-library/react";
 import App from "../../App";
 import userEvent from "@testing-library/user-event";
 
-import { WheelSize } from '../Wheel/WheelSize'
+import WheelIndex from '../../components/Wheel/WheelIndex'
 
 
 it.todo('should test that the components mounts')
@@ -69,34 +69,65 @@ const wheelOptions = [
     { text: "16 Inch", value: "349" }
 ];
 
-const WheelSize_Component = () => (
-    <WheelSize
-    data-testid="WheelSize_Dropdown"
-    label="Select size"
-    placeholder="Select size"
-    options={wheelOptions}
-    handleChange={(e: string) => setValue(e)}
-    handleChangeText={(e: string) => setText(e)}
-    // handleChange={(e: string) => setText(e)}
-  />
-);
+// const WheelSize_Component = () => (
+//     <WheelIndex
+//     data-testid="WheelSize_Dropdown"
+//     label="Select size"
+//     placeholder="Select size"
+//     options={wheelOptions}
+//     handleChange={(e: string) => setValue(e)}
+//     handleChangeText={(e: string) => setText(e)}
+//     onChange={(e: string) => childToParent(e)}
+//     // handleChange={(e: string) => setText(e)}
+//   />
+// );
 
 beforeEach(() => {
-    render(<App />)
+    // render(<App />)
+    // render(<WheelIndex />)
 })
 
 afterEach(() => {
     cleanup()
 })
 
-test('should mount component', () => {
-    const wheelDisplay = screen.getByTestId(/WheelSize_Display/i)
-    expect(wheelDisplay).toHaveTextContent('Wheel Size:')
-})
+// test('should mount component', () => {
+//     const wheelDisplay = screen.getByTestId(/WheelSize_Display/i)
+//     expect(wheelDisplay).toHaveTextContent('Wheel Size:')
+// })
 
-test('should start with no value diosplayed', () => {
-    const { getByTestId } = render(<WheelSize_Component />);
-    const dropdown = getByTestId('WheelSize_Dropdown')
-    const display = dropdown.children[0];
-    expect(display.textContent).toBe(wheelOptions[0].text)
+// test('should start with no value diosplayed', () => {
+//     // const { getByTestId } = render(<WheelIndex />);
+//     const dropdown = screen.getByTestId(/wheel_selection/i)
+//     const display = dropdown.children[0];
+//     expect(display.textContent).toBe("Wheel Size: ")
+// })
+
+
+test('should display selected option on change', () => {
+    const { getByTestId } = render(<WheelIndex />)
+    const dropdown = screen.getByTestId('WheelSize_Dropdown_Drawer')
+    const display = dropdown.children[0]
+    fireEvent.click(dropdown)
+    const dropDownOptions = getAllByTestId(dropdown, 'WheelSize_Dropdown_Styled')
+    fireEvent.click(dropDownOptions[2])
+
+    const valueDisplay = screen.getByTestId('WheelSize_Display')
+    expect(valueDisplay).toHaveTextContent("Wheel Size: 29 Inch / 700c");
 })
+// test('should display selected option on change', () => {
+//     // const { getByTestId } = render(<WheelIndex />);
+//     const dropdown = screen.getByTestId(/wheel_selection/i)
+//     const display = dropdown.children[0];
+//     const display_2 = dropdown.children[2];
+//     const testdrop = screen.getAllByTestId(/WheelSize_Dropdown_Styled/i)
+//     // fireEvent.click(dropdown); 
+//     const dropDownButton = screen.getByTestId('WheelSize_Dropdown_Button')
+//     const dropDownOptions = screen.getByText('26 Inch')
+//     fireEvent.click(dropDownButton)
+//     console.log(dropDownOptions)
+//     // fireEvent.change(dropdown, dropdown.children[2])
+//     fireEvent.change(dropdown, dropDownOptions)
+//     // fireEvent.click(dropDownButton)
+//     expect(display.textContent).toBe(wheelOptions[2].text)
+// })

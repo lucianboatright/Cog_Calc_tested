@@ -83,14 +83,14 @@ function App() {
     { text: "5.00 Inch", value: "124.46" },
   ];
 
-  const [data, setData] = useState('');
+  const [wheelDataState, setWheelDataState] = useState('');
 
   const childToParent = (wheelData) => {
-   setData(wheelData)
+    setWheelDataState(wheelData)
   }
 
-  
-  console.log(data);
+
+  console.log(wheelDataState);
 
   return (
     <div className="App">
@@ -131,7 +131,7 @@ function App() {
                   />
                 </div>
                 <div className="Detials">
-                  <Details tyreSize={tyreValue} tyreText={tyreText} />
+                  <Details wheelSize={wheelDataState} tyreSize={tyreValue} tyreText={tyreText} />
                 </div>
               </div>
             {/* </WheelProvider> */}
