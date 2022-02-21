@@ -1,12 +1,8 @@
 import React, { useState } from 'react';
 import WheelSize from './WheelSize';
-import TyreSize from './TyreSize';
-import Detail from '../Details/Details';
-// import { Details } from './components/Details/Details';
 
 
-
-function WheelIndex({childToParentWheel}) {
+function WheelIndex({childToParentWheel, childToParentWheelValue}: any) {
 
   const [value, setValue] = useState<string>("");
   const [text, setText] = useState<string>("")
@@ -32,7 +28,7 @@ function WheelIndex({childToParentWheel}) {
             handleChange={(e: string) => setValue(e)}
             handleChangeText={(e: string) => setText(e)}
             onChange={(e: string) => childToParentWheel(e)}
-            // handleChange={(e: string) => setText(e)}
+            onChangeValue={(e: string) => childToParentWheelValue(e)}
         />
 
     </div>

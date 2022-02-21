@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
 import TyreSize from '../Tyres/TyreSize';
 import Detail from '../Details/Details';
-// import { Details } from './components/Details/Details';
 
 
-
-function TyreIndex({childToParentTyre}) {
+function TyreIndex({childToParentTyre, childToParentTyreValue}: any) {
 
     const [tyreValue, setTyreValue] = useState<string>("");
     const [tyreText, setTyreText] = useState<string>("")
@@ -62,7 +60,7 @@ function TyreIndex({childToParentTyre}) {
 
   return (
     <div className='tyre_selection' data-testid='tyre_selection_id'>
-        <div data-testid="WheelSize_Display">Wheel Size: {tyreText}</div>
+        <div data-testid="WheelSize_Display">Tyre Size: {tyreText}</div>
         <TyreSize
             data-testid="TyreSize_Dropdown"
             label="Select size"
@@ -71,7 +69,7 @@ function TyreIndex({childToParentTyre}) {
             handleChange={(e: string) => setTyreValue(e)}
             handleChangeText={(e: string) => setTyreText(e)}
             onChange={(e: string) => childToParentTyre(e)}
-            // handleChange={(e: string) => setTyreText(e)}
+            onChangeValue={(e: string) => childToParentTyreValue(e)}
         />
 
     </div>

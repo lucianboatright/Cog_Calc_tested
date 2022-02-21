@@ -22,6 +22,7 @@ import {
     placeholder: string;
     handleChange: Function;
     onChange: Function;
+    onChangeValue: Function;
     handleChangeText: Function;
   }
   
@@ -30,6 +31,7 @@ import {
     handleChange,
     handleChangeText,
     onChange,
+    onChangeValue,
     label,
     placeholder
   }) => {
@@ -65,6 +67,7 @@ import {
                   handleChangeText(option.text)
                   setActive(false);
                   onChange(option.text)
+                  onChangeValue(option.value)
                 }}
                 selected={value === option.value}
               >
