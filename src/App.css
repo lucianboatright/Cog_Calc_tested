@@ -158,3 +158,15 @@ svg {
     transform: rotate(359deg);
   }
 }
+
+/* Wheel Size Details */
+
+.Wheel_size_Details {
+  padding: 1rem;
+  border-top: 2px black solid;
+}
+
+.Tyre_size_Details {
+  padding: 1rem;
+  border-top: 2px black solid;
+}

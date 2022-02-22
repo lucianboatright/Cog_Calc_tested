@@ -7,7 +7,7 @@ import {
     StyledDropdownLabel,
     StyledDropDownOption,
     StyledDropDownText
-  } from "./styled";
+  } from "../Wheel/styled";
   import { FC, useState, createContext } from "react";
   
   type Options = {
@@ -26,7 +26,7 @@ import {
     handleChangeText: Function;
   }
   
-  const WheelSize: FC<DropdownProps> = ({
+  const TyreSize: FC<DropdownProps> = ({
     options = [],
     handleChange,
     handleChangeText,
@@ -44,7 +44,7 @@ import {
         <StyledDropDownContainer>
           {label && <StyledDropdownLabel>{label}</StyledDropdownLabel>}
           <StyledDropDownButton
-            data-testid="WheelSize_Dropdown_Button"
+          data-testid="TyreSize_Dropdown_Button"
             disabled={options.length === 0}
             onClick={() => setActive(!active)}
           >
@@ -55,10 +55,10 @@ import {
             </StyledDropDownText>
             <StyledDropDownButtonArrow active={active} />
           </StyledDropDownButton>
-          <StyledDropDownDrawer active={active} data-testid="WheelSize_Dropdown_Drawer">
+          <StyledDropDownDrawer active={active} data-testid="TyreSize_Dropdown_Drawer">
             {options.map((option: Options, index: number) => (
               <StyledDropDownOption
-                data-testid="WheelSize_Dropdown_Styled"
+                data-testid="TyreSize_Dropdown_Styled"
                 key={index}
                 onClick={() => {
                   setValue(option.value);
@@ -80,52 +80,5 @@ import {
     );
   };
   
-  export default WheelSize;
+  export default TyreSize;
   
-
-
-// import React from 'react';
-
-// const WheelSize = () => {
-//     const options = [
-//       { label: 'Fruit', value: 'fruit' },
-//       { label: 'Vegetable', value: 'vegetable' },
-//       { label: 'Meat', value: 'meat' },
-//     ];
-  
-//     const [value, setValue] = React.useState('fruit');
-  
-//     const handleChange = (event) => {
-//       setValue(event.target.value);
-//     };
-  
-//     return (
-//       <div>
-//         <Dropdown
-//           label="What do we eat?"
-//           options={options}
-//           value={value}
-//           onChange={handleChange}
-//         />
-  
-//         <p>We eat {value}!</p>
-//       </div>
-//     );
-//   };
-
-
-  
-//   const Dropdown = ({ label, value, options, onChange }) => {
-//     return (
-//       <label>
-//         {label}
-//         <select value={value} onChange={onChange}>
-//           {options.map((option) => (
-//             <option value={option.value}>{option.label}</option>
-//           ))}
-//         </select>
-//       </label>
-//     );
-//   };
-
-//   export default WheelSize;
