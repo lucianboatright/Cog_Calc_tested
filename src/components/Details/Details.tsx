@@ -22,11 +22,11 @@ const Detail = ({ tyreText, tyreTextValue, wheelSize, wheelSizeValue }: any) => 
     const Speed = (WheelCircumferance * parseFloat(GearRatio) * crankRpm * 60) / 100000
     const GearInches = ((Number(GearRatio) * WheelCircumferance) / 100)
 
-    console.log("Gear Ratio", GearRatio)
-    console.log("Gear Inches", GearInches.toFixed(2))
-    console.log("total wheel diameter", TotalWheelDiameter)
-    console.log("Wheel cuircumferance", WheelCircumferance.toFixed(2))
-    console.log("Speed", Speed)
+    // console.log("Gear Ratio", GearRatio)
+    // console.log("Gear Inches", GearInches.toFixed(2))
+    // console.log("total wheel diameter", TotalWheelDiameter)
+    // console.log("Wheel cuircumferance", WheelCircumferance.toFixed(2))
+    // console.log("Speed", Speed)
 
     return (
         <div className='DatailsSection'>

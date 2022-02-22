@@ -7,15 +7,15 @@ function DriveTrain() {
   return (
     <div>
         <div className="Cogs_Section">
-            <div className="rearCogComponent">
+            <span className="rearCogComponent">
                 <RearCogCounter />
-            </div>
-            <div className='cadanceRpm'>
+            {/* </span>
+            <span className='cadanceRpm'> */}
                 <Crank />
-            </div>
-            <div className="frontCogComponent">
+            </span>
+            {/* <div className="frontCogComponent">
                 <FrontCogCounter />
-            </div>
+            </div> */}
         </div>
     </div>
   );

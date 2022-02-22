@@ -1,5 +1,5 @@
 .App {
-  text-align: center;
+  /* text-align: center; */
 }
 
 .Main_Body {
@@ -24,6 +24,7 @@
 }
 
 /* Title Header */
+
 .Title {
   padding: 1rem;
   font-size: xx-large;
@@ -31,6 +32,7 @@
 }
 
 /* Details Section */
+
 .DetailsTitle {
   padding: 1rem;
 }
@@ -52,18 +54,24 @@
 
 /* Inside Drive Train Component */
 
-.rearCogComponent {
+/* .Cogs_Section {
   display: inline-block;
+} */
+
+.rearCogComponent {
+  width: auto;
+  display: inline;
   padding: 2rem;
 }
 
 .frontCogComponent {
-  display: inline-block;
+  display: inline;
   padding: 2rem;
 }
 
 .cadanceRpm {
-  display: inline-block;
+  display: inline;
+  width: auto;
   padding: 2rem;
 }
 
@@ -84,8 +92,45 @@
   width: 2rem;
   border-radius: 10px;
 }
+.RearShiftInput {
+  margin-left: 3rem;
+  width: 3rem;
+}
+
+.RearCogComponent {
+  grid-area: top;
+}
+.RearShifters {
+  grid-area: right;
+}
+.Rear_Input {
+  grid-area: left;
+}
+.RearCog_Cog {
+  grid-area: main;
+}
+
+.RearCog_Component {
+  display: grid;
+  grid-template-areas:
+    "top top top top"
+    "right right right right "
+    "main main main main ";
+  gap: 10px;
+  /* background-color: #2196f3; */
+  padding: 10px;
+}
+
+.RearCog_Component > div {
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  padding: 20px 0;
+  font-size: 30px;
+  width: 20rem;
+}
 
 /* Front Cog Shifters */
+
 .FrontShifters {
   padding-top: 1rem;
 }
@@ -133,6 +178,7 @@ svg {
     transform-origin: center;
   }
 }
+
 /* Crank RPM */
 
 .IncreaseCadance {
@@ -144,6 +190,33 @@ svg {
   height: 2rem;
   width: 2rem;
   border-radius: 10px;
+}
+
+.Crank_Display_Rpm {
+  grid-area: left;
+}
+.Crank_Display_Cog {
+  grid-area: right;
+}
+.Crank_Display_Svg {
+  grid-area: main;
+}
+
+.Crank_Component {
+  display: grid;
+  grid-template-areas:
+    "left left right right"
+    "main main main main ";
+  gap: 10px;
+  /* background-color: #2196f3; */
+  padding: 10px;
+}
+
+.Crank_Component > div {
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  padding: 20px 0;
+  font-size: 30px;
 }
 
 .CrankSvg {

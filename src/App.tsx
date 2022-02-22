@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import WheelSize from './components/Wheel/WheelSize';
-import TyreSize from './components/Tyres/TyreSize';
 import './App.css';
 import RearCogProvider from './components/Context/RearCogContext';
 import FrontCogProvider from './components/Context/FrontCogContext';
@@ -47,8 +45,10 @@ function App() {
                 <div className="DriveTrain">
                     <DriveTrain />
                 </div>
-                <WheelIndex childToParentWheel={childToParentWheel} childToParentWheelValue={childToParentWheelValue} />
-                <TyreIndex childToParentTyre={childToParentTyre} childToParentTyreValue={childToParentTyreValue} />
+                <div className='Wheel_Details'>
+                  <WheelIndex childToParentWheel={childToParentWheel} childToParentWheelValue={childToParentWheelValue} />
+                  <TyreIndex childToParentTyre={childToParentTyre} childToParentTyreValue={childToParentTyreValue} />
+                </div>
                 <div className="Detials">
                   <Details wheelSize={wheelDataState} wheelSizeValue={wheelDataStateValue} tyreTextValue={tyreDataStateValue} tyreText={tyreDataState} />
                 </div>
