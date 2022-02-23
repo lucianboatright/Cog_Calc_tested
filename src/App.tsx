@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import WheelSize from './components/Wheel/WheelSize';
-import TyreSize from './components/Tyres/TyreSize';
 import './App.css';
 import RearCogProvider from './components/Context/RearCogContext';
 import FrontCogProvider from './components/Context/FrontCogContext';
@@ -9,6 +7,8 @@ import DriveTrain from './components/DriveTrain/DriveTrain';
 import CrankProvider from './components/Context/CrankContext';
 import WheelIndex from './components/Wheel/WheelIndex';
 import TyreIndex from './components/Tyres/TyreIndex';
+import Crank from './components/DriveTrain/Crank';
+import RearCogCounter from './components/DriveTrain/RearCog';
 
 
 
@@ -44,11 +44,16 @@ function App() {
                 <div>Cog Calculator</div>
               </div>
               <div className="Main_Body">
-                <div className="DriveTrain">
-                    <DriveTrain />
+                <div >
+                    <RearCogCounter />
                 </div>
-                <WheelIndex childToParentWheel={childToParentWheel} childToParentWheelValue={childToParentWheelValue} />
-                <TyreIndex childToParentTyre={childToParentTyre} childToParentTyreValue={childToParentTyreValue} />
+                <div>
+                    <Crank />
+                </div>
+                <div className='Wheel_Details'>
+                  <WheelIndex childToParentWheel={childToParentWheel} childToParentWheelValue={childToParentWheelValue} />
+                  <TyreIndex childToParentTyre={childToParentTyre} childToParentTyreValue={childToParentTyreValue} />
+                </div>
                 <div className="Detials">
                   <Details wheelSize={wheelDataState} wheelSizeValue={wheelDataStateValue} tyreTextValue={tyreDataStateValue} tyreText={tyreDataState} />
                 </div>

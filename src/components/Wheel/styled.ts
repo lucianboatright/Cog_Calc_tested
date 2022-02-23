@@ -78,7 +78,9 @@ export const StyledDropDownButtonArrow = styled.div<Active>`
 
 export const StyledDropDownDrawer = styled.div<Active>`
   position: absolute;
-  top: 70px;
+  top: auto;
+  z-index: 999;
+  bottom: 100%
   left: 0;
   width: 100%;
   height: ${(props) => (props.active ? "200px" : "20px")};

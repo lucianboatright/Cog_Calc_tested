@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import WheelSize from './WheelSize';
 
 
+
 function WheelIndex({childToParentWheel, childToParentWheelValue}: any) {
 
   const [value, setValue] = useState<string>("");
@@ -19,10 +20,10 @@ function WheelIndex({childToParentWheel, childToParentWheelValue}: any) {
 
   return (
     <div className='wheel_selection' data-testid='wheel_selection_id'>
-        <div data-testid="WheelSize_Display">Wheel Size: {text}</div>
+        <div data-testid="WheelSize_Display">Wheel Size<span className='Red_semi'> : </span> {text}</div>
         <WheelSize
             data-testid="WheelSize_Dropdown"
-            label="Select size"
+            // label="Select size"
             placeholder="Select size"
             options={wheelOptions}
             handleChange={(e: string) => setValue(e)}

@@ -1,12 +1,12 @@
 .App {
-  text-align: center;
+  /* text-align: center; */
 }
 
 .Main_Body {
   width: 100%;
   height: 100px;
   display: flex;
-  /* justify-content: space-between; */
+  justify-content: space-between;
 }
 
 .DatailsSection {
@@ -23,14 +23,24 @@
   /* display: inline; */
 }
 
-/* Title Header */
-.Title {
-  padding: 1rem;
-  font-size: xx-large;
-  color: black;
+.Red_semi {
+  color: red;
+  font-weight: 900;
 }
 
-/* Details Section */
+/* Title Header ************************************ */
+
+.Title {
+  padding: 1rem;
+  font-size: xxx-large;
+  color: black;
+  text-align: center;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  border-bottom: 2px solid red;
+}
+
+/* Details Section ************************************ */
+
 .DetailsTitle {
   padding: 1rem;
 }
@@ -50,24 +60,30 @@
   border-top: 2px black solid;
 }
 
-/* Inside Drive Train Component */
+/* Inside Drive Train Component ************************************ */
+
+/* .Cogs_Section {
+  display: inline-block;
+} */
 
 .rearCogComponent {
-  display: inline-block;
+  width: auto;
+  display: inline;
   padding: 2rem;
 }
 
 .frontCogComponent {
-  display: inline-block;
+  display: inline;
   padding: 2rem;
 }
 
 .cadanceRpm {
-  display: inline-block;
+  display: inline;
+  width: auto;
   padding: 2rem;
 }
 
-/* Rear Cog Shifters */
+/* Rear Cog Shifters ************************************  */
 
 .RearShifters {
   padding-top: 1rem;
@@ -84,8 +100,39 @@
   width: 2rem;
   border-radius: 10px;
 }
+.RearShiftInput {
+  margin-left: 3rem;
+  width: 3rem;
+}
 
-/* Front Cog Shifters */
+.RearCogComponent {
+  grid-area: top;
+}
+.RearCog_Cog {
+  grid-area: main;
+}
+
+.RearCog_Component {
+  display: grid;
+  grid-template-areas:
+    "top "
+    "main ";
+  gap: 10px;
+  /* background-color: #2196f3; */
+  padding: 10px;
+  width: 20rem;
+}
+
+.RearCog_Component > div {
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  padding: 20px 0;
+  font-size: 30px;
+  width: 20rem;
+}
+
+/* Front Cog Shifters ************************************ */
+
 .FrontShifters {
   padding-top: 1rem;
 }
@@ -133,7 +180,8 @@ svg {
     transform-origin: center;
   }
 }
-/* Crank RPM */
+
+/* Crank RPM ************************************ */
 
 .IncreaseCadance {
   height: 2rem;
@@ -144,6 +192,34 @@ svg {
   height: 2rem;
   width: 2rem;
   border-radius: 10px;
+}
+
+.Crank_Display_Rpm {
+  grid-area: left;
+}
+.Crank_Display_Cog {
+  grid-area: right;
+}
+.Crank_Display_Svg {
+  grid-area: main;
+}
+
+.Crank_Component {
+  display: grid;
+  grid-template-areas:
+    "left left right right"
+    "main main main main ";
+  gap: 10px;
+  /* background-color: #2196f3; */
+  padding: 10px;
+  width: 30rem;
+}
+
+.Crank_Component > div {
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  padding: 20px 0;
+  font-size: 30px;
 }
 
 .CrankSvg {
@@ -159,14 +235,24 @@ svg {
   }
 }
 
-/* Wheel Size Details */
+/* Wheel Size Details ************************************ */
 
 .Wheel_size_Details {
   padding: 1rem;
   border-top: 2px black solid;
 }
 
+.wheel_selection {
+  margin-top: 2rem;
+}
+
+/* Tyre Size Details ************************************  */
+
 .Tyre_size_Details {
   padding: 1rem;
   border-top: 2px black solid;
+}
+
+.tyre_selection {
+  margin-top: 2rem;
 }
