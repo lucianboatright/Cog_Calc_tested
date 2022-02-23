@@ -87,5 +87,5 @@ test('gear ratio changes on change of cogs 12/48 = 4.00 ', () => {
 
 test('should show rpm starting at 90rpm', () => {
     const Cadance_rpm = screen.getByTestId(/Cadance_rpm_Datails/i)
-    expect(Cadance_rpm).toHaveTextContent('Cadance: 90rpm')
+    expect(Cadance_rpm).toHaveTextContent('Cadance : 90rpm')
 })

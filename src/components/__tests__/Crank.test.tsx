@@ -15,7 +15,7 @@ beforeEach(() => {
 
 test('should show rpm starting at 90rpm', () => {
     const Display_Cadance = screen.getByTestId(/Display_Cadance/i)
-    expect(Display_Cadance).toHaveTextContent('Cadance: 90rpm')
+    expect(Display_Cadance).toHaveTextContent('Cadance : 90rpm')
 })
 
 test('should increase RPM by one at a time', () => {
@@ -24,7 +24,7 @@ test('should increase RPM by one at a time', () => {
     const IncreaseCadance = screen.getByTestId(/IncreaseCadance/i)
     userEvent.click(IncreaseCadance)
 
-    expect(Display_Cadance).toHaveTextContent('Cadance: 91rpm')
+    expect(Display_Cadance).toHaveTextContent('Cadance : 91rpm')
 
 })
 
@@ -34,7 +34,7 @@ test('should decrese RPM by one at a time', () => {
     const DecreaseCadance = screen.getByTestId(/DecreaseCadance/i)
     userEvent.click(DecreaseCadance)
 
-    expect(Display_Cadance).toHaveTextContent('Cadance: 89rpm')
+    expect(Display_Cadance).toHaveTextContent('Cadance : 89rpm')
 })
 
 test('should increase RPM to limit of 220rpm', () => {
@@ -45,7 +45,7 @@ test('should increase RPM to limit of 220rpm', () => {
         userEvent.click(IncreaseCadance)
     }
 
-    expect(Display_Cadance).toHaveTextContent('Cadance: 220rpm')
+    expect(Display_Cadance).toHaveTextContent('Cadance : 220rpm')
 })
 
 test('should decrese RPM by one at a time', () => {
@@ -56,6 +56,6 @@ test('should decrese RPM by one at a time', () => {
         userEvent.click(DecreaseCadance)
     }
 
-    expect(Display_Cadance).toHaveTextContent('Cadance: 40rpm')
+    expect(Display_Cadance).toHaveTextContent('Cadance : 40rpm')
 })
 

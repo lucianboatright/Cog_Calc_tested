@@ -6,7 +6,7 @@
   width: 100%;
   height: 100px;
   display: flex;
-  /* justify-content: space-between; */
+  justify-content: space-between;
 }
 
 .DatailsSection {
@@ -23,15 +23,23 @@
   /* display: inline; */
 }
 
-/* Title Header */
+.Red_semi {
+  color: red;
+  font-weight: 900;
+}
+
+/* Title Header ************************************ */
 
 .Title {
   padding: 1rem;
-  font-size: xx-large;
+  font-size: xxx-large;
   color: black;
+  text-align: center;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  border-bottom: 2px solid red;
 }
 
-/* Details Section */
+/* Details Section ************************************ */
 
 .DetailsTitle {
   padding: 1rem;
@@ -52,7 +60,7 @@
   border-top: 2px black solid;
 }
 
-/* Inside Drive Train Component */
+/* Inside Drive Train Component ************************************ */
 
 /* .Cogs_Section {
   display: inline-block;
@@ -75,7 +83,7 @@
   padding: 2rem;
 }
 
-/* Rear Cog Shifters */
+/* Rear Cog Shifters ************************************  */
 
 .RearShifters {
   padding-top: 1rem;
@@ -100,12 +108,6 @@
 .RearCogComponent {
   grid-area: top;
 }
-.RearShifters {
-  grid-area: right;
-}
-.Rear_Input {
-  grid-area: left;
-}
 .RearCog_Cog {
   grid-area: main;
 }
@@ -113,12 +115,12 @@
 .RearCog_Component {
   display: grid;
   grid-template-areas:
-    "top top top top"
-    "right right right right "
-    "main main main main ";
+    "top "
+    "main ";
   gap: 10px;
   /* background-color: #2196f3; */
   padding: 10px;
+  width: 20rem;
 }
 
 .RearCog_Component > div {
@@ -129,7 +131,7 @@
   width: 20rem;
 }
 
-/* Front Cog Shifters */
+/* Front Cog Shifters ************************************ */
 
 .FrontShifters {
   padding-top: 1rem;
@@ -179,7 +181,7 @@ svg {
   }
 }
 
-/* Crank RPM */
+/* Crank RPM ************************************ */
 
 .IncreaseCadance {
   height: 2rem;
@@ -210,6 +212,7 @@ svg {
   gap: 10px;
   /* background-color: #2196f3; */
   padding: 10px;
+  width: 30rem;
 }
 
 .Crank_Component > div {
@@ -232,14 +235,24 @@ svg {
   }
 }
 
-/* Wheel Size Details */
+/* Wheel Size Details ************************************ */
 
 .Wheel_size_Details {
   padding: 1rem;
   border-top: 2px black solid;
 }
 
+.wheel_selection {
+  margin-top: 2rem;
+}
+
+/* Tyre Size Details ************************************  */
+
 .Tyre_size_Details {
   padding: 1rem;
   border-top: 2px black solid;
+}
+
+.tyre_selection {
+  margin-top: 2rem;
 }

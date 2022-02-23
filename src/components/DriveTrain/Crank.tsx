@@ -31,14 +31,14 @@ const Crank = () => {
        <div className="Crank_Component">
            {/* <div> */}
             <div className="Crank_Display_Rpm">
-                <div data-testid="Display_Cadance">Cadance: {crankRpm}rpm</div>
-                <div>
+                <div data-testid="Display_Cadance">Cadance<span className='Red_semi'> :</span> {crankRpm}rpm</div>
+                <div className='FrontShifters'>
                     <button className="DecreaseCadance" data-testid='DecreaseCadance' onClick={DecreaseCadance}>-</button>
                     <button className="IncreaseCadance" data-testid='IncreaseCadance' onClick={IncreaseCadance}>+</button>
                 </div>
             </div>
             <div className="Crank_Display_Cog">
-                <div className="FrontCogComponent" data-testid="FrontCogComponent" id='FrontCogComponent' >Front Cog: {frontCog}</div>
+                <div className="FrontCogComponent" data-testid="FrontCogComponent" id='FrontCogComponent' >Front Cog<span className='Red_semi'> :</span> {frontCog}</div>
                 <div className='FrontShifters'>
                     <button className='FrontShiftDown' data-testid="FrontShiftDown" onClick={frontDecroment}>-</button>
                     <button className='FrontShiftUp' data-testid="FrontShiftUp" onClick={frontIncroment}>+</button>

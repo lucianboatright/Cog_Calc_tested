@@ -1,18 +1,18 @@
 import React from 'react';
 import RearCogCounter from './RearCog'
-import FrontCogCounter from './FrontCog';
+
 import Crank from './Crank';
 
 function DriveTrain() {
   return (
     <div>
         <div className="Cogs_Section">
-            <span className="rearCogComponent">
+            <div className="rearCogComponent">
                 <RearCogCounter />
-            {/* </span>
-            <span className='cadanceRpm'> */}
+            </div>
+            <div className='cadanceRpm'>
                 <Crank />
-            </span>
+            </div>
             {/* <div className="frontCogComponent">
                 <FrontCogCounter />
             </div> */}

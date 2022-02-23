@@ -31,14 +31,14 @@ const Detail = ({ tyreText, tyreTextValue, wheelSize, wheelSizeValue }: any) => 
     return (
         <div className='DatailsSection'>
             <div className='DetailsTitle' data-testid={'DetailsTitle'} >Details</div>
-            <div className='Cogs_Display'><span data-testid="Details_Cogs_Rear">Rear Cog: {rearCog} - </span><span data-testid="Details_Cogs_Front">Front Cog: {frontCog}</span></div>
-            <div className="Wheel_size_Details">Wheel Size: {wheelTextCondition}</div>
-            <div className="Tyre_size_Details">Tyre Size: {tyreTextCondition}</div>
-            <div className='Gear_ratio' data-testid="Gear_ratio">Wheel Cuircumferance: {WheelCircumferance.toFixed(2)} Meters</div>
-            <div className='Gear_ratio' data-testid="Gear_ratio">Gear Ratios: {GearRatio}</div>
-            <div className='Gear_ratio' data-testid="Gear_ratio">Gear Inches: {GearInches.toFixed(2)}</div>
-            <div className='Cadance_rpm_Datails' data-testid="Cadance_rpm_Datails">Cadance: {crankRpm}rpm </div>
-            <div className='Cadance_rpm_Datails' data-testid="Cadance_rpm_Datails">Speed: {Speed.toFixed(2)} Km/h </div>
+            <div className='Cogs_Display'><span data-testid="Details_Cogs_Rear">Rear Cog<span className='Red_semi'> :</span> {rearCog} - </span><span data-testid="Details_Cogs_Front">Front Cog<span className='Red_semi'> :</span> {frontCog}</span></div>
+            <div className="Wheel_size_Details">Wheel Size<span className='Red_semi'> :</span> {wheelTextCondition}</div>
+            <div className="Tyre_size_Details">Tyre Size<span className='Red_semi'> :</span> {tyreTextCondition}</div>
+            <div className='Gear_ratio' data-testid="Wheel_circ">Wheel Cuircumferance<span className='Red_semi'> :</span> {WheelCircumferance.toFixed(2)} Meters</div>
+            <div className='Gear_ratio' data-testid="Gear_ratio">Gear Ratios<span className='Red_semi'> :</span> {GearRatio}</div>
+            <div className='Gear_ratio' data-testid="Gear_Inches">Gear Inches<span className='Red_semi'> :</span> {GearInches.toFixed(2)}</div>
+            <div className='Cadance_rpm_Datails' data-testid="Cadance_rpm_Datails">Cadance<span className='Red_semi'> :</span> {crankRpm}rpm </div>
+            <div className='Cadance_rpm_Datails' data-testid="Speed_Datails">Speed<span className='Red_semi'> :</span> {Speed.toFixed(2)} Km/h </div>
         </div>
     )
 }
