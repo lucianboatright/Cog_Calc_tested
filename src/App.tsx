@@ -3,7 +3,6 @@ import './App.css';
 import RearCogProvider from './components/Context/RearCogContext';
 import FrontCogProvider from './components/Context/FrontCogContext';
 import Details from './components/Details/Details'
-import DriveTrain from './components/DriveTrain/DriveTrain';
 import CrankProvider from './components/Context/CrankContext';
 import WheelIndex from './components/Wheel/WheelIndex';
 import TyreIndex from './components/Tyres/TyreIndex';
