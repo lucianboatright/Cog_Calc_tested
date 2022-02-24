@@ -2,7 +2,7 @@ import React, { useContext, FC, useState } from 'react';
 import { FrontCogContext } from '../Context/FrontCogContext';
 import { RearCogContext } from '../Context/RearCogContext';
 import { CrankContext } from '../Context/CrankContext';
-// import Result from '../DropDownTest/DropResults';
+import Result from '../DropDownTest/DropResults';
 
 
 const Detail = ({ tyreText, tyreTextValue, wheelSize, wheelSizeValue }: any) => {
@@ -35,7 +35,7 @@ const Detail = ({ tyreText, tyreTextValue, wheelSize, wheelSizeValue }: any) => 
             <div className='Cadance_rpm_Datails' data-testid="Cadance_rpm_Datails">Cadance<span className='Red_semi'> :</span> {crankRpm}rpm </div>
             <div className='Cadance_rpm_Datails' data-testid="Speed_Datails">Speed<span className='Red_semi'> :</span> {Speed.toFixed(2)} Km/h </div>
             <div>
-                {/* <Result /> */}
+                <Result />
             </div>
         </div>
     )
