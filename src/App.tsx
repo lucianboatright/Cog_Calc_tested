@@ -8,10 +8,6 @@ import WheelIndex from './components/Wheel/WheelIndex';
 import TyreIndex from './components/Tyres/TyreIndex';
 import Crank from './components/DriveTrain/Crank';
 import RearCogCounter from './components/DriveTrain/RearCog';
-// import { Provider } from './components/DropDownTest/WheelContext';
-// import DropDown from './components/DropDownTest/DropDown';
-
-
 
 function App() {
   const [wheelDataState, setWheelDataState] = useState('');
@@ -41,7 +37,6 @@ function App() {
       <RearCogProvider>
         <FrontCogProvider>
           <CrankProvider>
-            {/* <Provider> */}
                 <div className="Title">
                   <div>Cog Calculator</div>
                 </div>
@@ -56,14 +51,10 @@ function App() {
                     <WheelIndex childToParentWheel={childToParentWheel} childToParentWheelValue={childToParentWheelValue} />
                     <TyreIndex childToParentTyre={childToParentTyre} childToParentTyreValue={childToParentTyreValue} />
                   </div>
-                  {/* <div>
-                    <DropDown />
-                  </div> */}
                   <div className="Detials">
                     <Details wheelSize={wheelDataState} wheelSizeValue={wheelDataStateValue} tyreTextValue={tyreDataStateValue} tyreText={tyreDataState} />
                   </div>
                 </div>
-              {/* </Provider> */}
           </CrankProvider>
         </FrontCogProvider>
       </RearCogProvider>
