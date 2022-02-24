@@ -56,9 +56,9 @@ function App() {
                     <WheelIndex childToParentWheel={childToParentWheel} childToParentWheelValue={childToParentWheelValue} />
                     <TyreIndex childToParentTyre={childToParentTyre} childToParentTyreValue={childToParentTyreValue} />
                   </div>
-                  <div>
+                  {/* <div>
                     <DropDown />
-                  </div>
+                  </div> */}
                   <div className="Detials">
                     <Details wheelSize={wheelDataState} wheelSizeValue={wheelDataStateValue} tyreTextValue={tyreDataStateValue} tyreText={tyreDataState} />
                   </div>

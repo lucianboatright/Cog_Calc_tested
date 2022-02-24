@@ -23,12 +23,6 @@ const Detail = ({ tyreText, tyreTextValue, wheelSize, wheelSizeValue }: any) => 
     const Speed = (WheelCircumferance * parseFloat(GearRatio) * crankRpm * 60) / 1000
     const GearInches = ((Number(GearRatio) * WheelCircumferance) / 100)
 
-    // console.log("Gear Ratio", GearRatio)
-    // console.log("Gear Inches", GearInches.toFixed(2))
-    // console.log("total wheel diameter", TotalWheelDiameter)
-    // console.log("Wheel cuircumferance", WheelCircumferance.toFixed(2))
-    // console.log("Speed", Speed)
-
     return (
         <div className='DatailsSection'>
             <div className='DetailsTitle' data-testid={'DetailsTitle'} >Details</div>
@@ -41,7 +35,7 @@ const Detail = ({ tyreText, tyreTextValue, wheelSize, wheelSizeValue }: any) => 
             <div className='Cadance_rpm_Datails' data-testid="Cadance_rpm_Datails">Cadance<span className='Red_semi'> :</span> {crankRpm}rpm </div>
             <div className='Cadance_rpm_Datails' data-testid="Speed_Datails">Speed<span className='Red_semi'> :</span> {Speed.toFixed(2)} Km/h </div>
             <div>
-                <Result />
+                {/* <Result /> */}
             </div>
         </div>
     )
