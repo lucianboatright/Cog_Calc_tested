@@ -8,8 +8,8 @@ import WheelIndex from './components/Wheel/WheelIndex';
 import TyreIndex from './components/Tyres/TyreIndex';
 import Crank from './components/DriveTrain/Crank';
 import RearCogCounter from './components/DriveTrain/RearCog';
-import { Provider } from './components/DropDownTest/WheelContext';
-import DropDown from './components/DropDownTest/DropDown';
+// import { Provider } from './components/DropDownTest/WheelContext';
+// import DropDown from './components/DropDownTest/DropDown';
 
 
 
@@ -41,7 +41,7 @@ function App() {
       <RearCogProvider>
         <FrontCogProvider>
           <CrankProvider>
-            <Provider>
+            {/* <Provider> */}
                 <div className="Title">
                   <div>Cog Calculator</div>
                 </div>
@@ -63,7 +63,7 @@ function App() {
                     <Details wheelSize={wheelDataState} wheelSizeValue={wheelDataStateValue} tyreTextValue={tyreDataStateValue} tyreText={tyreDataState} />
                   </div>
                 </div>
-              </Provider>
+              {/* </Provider> */}
           </CrankProvider>
         </FrontCogProvider>
       </RearCogProvider>
