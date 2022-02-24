@@ -8,7 +8,6 @@ const Detail = ({ tyreText, tyreTextValue, wheelSize, wheelSizeValue }: any) => 
     const {rearCog} = useContext(RearCogContext)
     const {crankRpm} = useContext(CrankContext)
 
-    
     const tyreTextCondition = tyreText ? tyreText : "Select Tyre Value"
     const wheelTextCondition = wheelSize ? wheelSize : "Select Wheel Size"
 
