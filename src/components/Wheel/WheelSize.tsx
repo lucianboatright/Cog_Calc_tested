@@ -15,7 +15,6 @@ import {
     value: string;
   };
 
-  
   interface DropdownProps {
     options: Array<Options>;
     label?: string;
