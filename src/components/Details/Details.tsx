@@ -2,7 +2,7 @@ import React, { useContext, FC, useState } from 'react';
 import { FrontCogContext } from '../Context/FrontCogContext';
 import { RearCogContext } from '../Context/RearCogContext';
 import { CrankContext } from '../Context/CrankContext';
-import Result from '../DropDownTest/DropResults';
+// import Result from '../DropDownTest/DropResults';
 
 
 const Detail = ({ tyreText, tyreTextValue, wheelSize, wheelSizeValue }: any) => {
