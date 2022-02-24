@@ -8,6 +8,8 @@ import WheelIndex from './components/Wheel/WheelIndex';
 import TyreIndex from './components/Tyres/TyreIndex';
 import Crank from './components/DriveTrain/Crank';
 import RearCogCounter from './components/DriveTrain/RearCog';
+import { Provider } from './components/DropDownTest/WheelContext';
+import DropDown from './components/DropDownTest/DropDown';
 
 
 
@@ -39,24 +41,29 @@ function App() {
       <RearCogProvider>
         <FrontCogProvider>
           <CrankProvider>
-              <div className="Title">
-                <div>Cog Calculator</div>
-              </div>
-              <div className="Main_Body">
-                <div >
-                    <RearCogCounter />
+            <Provider>
+                <div className="Title">
+                  <div>Cog Calculator</div>
                 </div>
-                <div>
-                    <Crank />
+                <div className="Main_Body">
+                  <div >
+                      <RearCogCounter />
+                  </div>
+                  <div>
+                      <Crank />
+                  </div>
+                  <div className='Wheel_Details'>
+                    <WheelIndex childToParentWheel={childToParentWheel} childToParentWheelValue={childToParentWheelValue} />
+                    <TyreIndex childToParentTyre={childToParentTyre} childToParentTyreValue={childToParentTyreValue} />
+                  </div>
+                  <div>
+                    <DropDown />
+                  </div>
+                  <div className="Detials">
+                    <Details wheelSize={wheelDataState} wheelSizeValue={wheelDataStateValue} tyreTextValue={tyreDataStateValue} tyreText={tyreDataState} />
+                  </div>
                 </div>
-                <div className='Wheel_Details'>
-                  <WheelIndex childToParentWheel={childToParentWheel} childToParentWheelValue={childToParentWheelValue} />
-                  <TyreIndex childToParentTyre={childToParentTyre} childToParentTyreValue={childToParentTyreValue} />
-                </div>
-                <div className="Detials">
-                  <Details wheelSize={wheelDataState} wheelSizeValue={wheelDataStateValue} tyreTextValue={tyreDataStateValue} tyreText={tyreDataState} />
-                </div>
-              </div>
+              </Provider>
           </CrankProvider>
         </FrontCogProvider>
       </RearCogProvider>

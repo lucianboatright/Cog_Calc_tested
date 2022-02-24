@@ -2,6 +2,7 @@ import React, { useContext, FC, useState } from 'react';
 import { FrontCogContext } from '../Context/FrontCogContext';
 import { RearCogContext } from '../Context/RearCogContext';
 import { CrankContext } from '../Context/CrankContext';
+import Result from '../DropDownTest/DropResults';
 
 
 const Detail = ({ tyreText, tyreTextValue, wheelSize, wheelSizeValue }: any) => {
@@ -18,8 +19,8 @@ const Detail = ({ tyreText, tyreTextValue, wheelSize, wheelSizeValue }: any) => 
 
     const GearRatio = (Number(frontCog) / Number(rearCog)).toFixed(2)
     const TotalWheelDiameter = (Number(wheelValue) + (Number(tyreValue) * 2))
-    const WheelCircumferance = ((TotalWheelDiameter * Math.PI) / 10)
-    const Speed = (WheelCircumferance * parseFloat(GearRatio) * crankRpm * 60) / 100000
+    const WheelCircumferance = ((TotalWheelDiameter * Math.PI) / 1000)
+    const Speed = (WheelCircumferance * parseFloat(GearRatio) * crankRpm * 60) / 1000
     const GearInches = ((Number(GearRatio) * WheelCircumferance) / 100)
 
     // console.log("Gear Ratio", GearRatio)
@@ -39,6 +40,9 @@ const Detail = ({ tyreText, tyreTextValue, wheelSize, wheelSizeValue }: any) => 
             <div className='Gear_ratio' data-testid="Gear_Inches">Gear Inches<span className='Red_semi'> :</span> {GearInches.toFixed(2)}</div>
             <div className='Cadance_rpm_Datails' data-testid="Cadance_rpm_Datails">Cadance<span className='Red_semi'> :</span> {crankRpm}rpm </div>
             <div className='Cadance_rpm_Datails' data-testid="Speed_Datails">Speed<span className='Red_semi'> :</span> {Speed.toFixed(2)} Km/h </div>
+            <div>
+                <Result />
+            </div>
         </div>
     )
 }
