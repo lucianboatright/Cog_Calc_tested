@@ -5,14 +5,18 @@ This is a project that is being built up using TDD at is core to build and devel
 The goal is to create a simple speed caculator for cyuclist to show the users statistics basesd on the selected set up.
 
 Inputs:
-
 - Rear and Front cog size, change up or down by one.
-- Select Wheel and Tyre size.
+- Select Wheel size 
+- Select Tyre size.
 - Pedaling RPM
 
 Outputs:
-
-- Speed , Gear Ratios, cog sizes, wheel and tyre sizes
+- Speed
+- Gear Ratios 
+- Gear Inches
+- Cog sizes Front and Rear
+- Cadance
+- Wheel and tyre sizes
 
 ## Equations
 
@@ -89,6 +93,7 @@ tyre:
 ## Technology
 
 I have used Typescript on a React.js framework with Jest for testing.
+This porject was mainly built to learn about how to use useContext to pass state between components. 
 
 There were other potential testing frameworks that may be included later like Espresso but currently Jest is covering all required types from unit testing to UAT testing.
 
