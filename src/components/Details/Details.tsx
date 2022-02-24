@@ -1,4 +1,4 @@
-import React, { useContext, FC, useState } from 'react';
+import React, { useContext } from 'react';
 import { FrontCogContext } from '../Context/FrontCogContext';
 import { RearCogContext } from '../Context/RearCogContext';
 import { CrankContext } from '../Context/CrankContext';

@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import TyreSize from '../Tyres/TyreSize';
-import Detail from '../Details/Details';
 
 
 function TyreIndex({childToParentTyre, childToParentTyreValue}: any) {

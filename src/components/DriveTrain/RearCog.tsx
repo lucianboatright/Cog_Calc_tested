@@ -1,5 +1,5 @@
-import React, { ChangeEvent, useContext, useState } from 'react';
-import RearCogProvider, {RearCogContext} from '../Context/RearCogContext';
+import React, { useContext } from 'react';
+import {RearCogContext} from '../Context/RearCogContext';
 import RearCogSvg from '../../Assets/Svg/RearCogSvg.svg'
 
 const RearCogCounter = () => {
@@ -33,7 +33,7 @@ const RearCogCounter = () => {
                 </div>
             </div>
             <div className='RearCog_Cog'>
-                <img height={RearCogSizing} width={RearCogSizing} src={RearCogSvg}  style={stylingObject.img}/>                
+                <img alt='RearCog' height={RearCogSizing} width={RearCogSizing} src={RearCogSvg}  style={stylingObject.img}/>                
             </div>
 
         </div>

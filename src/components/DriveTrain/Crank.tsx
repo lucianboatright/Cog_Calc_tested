@@ -1,7 +1,5 @@
 import React, {useContext} from "react";
 import { CrankContext } from "../Context/CrankContext";
-
-import CrankSvg from '../../Assets/Svg/CrankSvg.svg'
 import { FrontCogContext } from '../Context/FrontCogContext';
 import FrontCog from '../../Assets/Svg/FrontCogSvg.svg'
 

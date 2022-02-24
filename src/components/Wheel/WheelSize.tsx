@@ -8,7 +8,7 @@ import {
     StyledDropDownOption,
     StyledDropDownText
   } from "./styled";
-  import { FC, useState, createContext } from "react";
+  import { FC, useState } from "react";
   
   type Options = {
     text: string;
