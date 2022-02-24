@@ -3,7 +3,6 @@ import { FrontCogContext } from '../Context/FrontCogContext';
 import { RearCogContext } from '../Context/RearCogContext';
 import { CrankContext } from '../Context/CrankContext';
 
-
 const Detail = ({ tyreText, tyreTextValue, wheelSize, wheelSizeValue }: any) => {
     const {frontCog} = useContext(FrontCogContext)
     const {rearCog} = useContext(RearCogContext)
