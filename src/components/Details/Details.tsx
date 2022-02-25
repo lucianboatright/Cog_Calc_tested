@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { FrontCogContext } from '../Context/FrontCogContext';
-import { RearCogContext } from '../Context/RearCogContext';
+import { RearCogContext } from '../Context/rearCogContext';
 import { CrankContext } from '../Context/CrankContext';
 
 const Detail = ({ tyreText, tyreTextValue, wheelSize, wheelSizeValue }: any) => {
