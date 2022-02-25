@@ -13,7 +13,7 @@ export const StyledContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 2rem;
+  // margin-top: 2rem;
   margin-right: 2rem;
 `;
 

@@ -3,7 +3,7 @@ import { RearCogContext } from '../Context/RearCogContext';
 import RearCogSvg from '../../Assets/Svg/RearCogSvg.svg'
 
 const RearCogCounter = () => {
-    const { rearCog, textInput, rearIncroment, rearDecroment } = useContext(RearCogContext);
+    const { rearCog, textInput, rearIncroment, rearDecroment, rearReset } = useContext(RearCogContext);
 
     let RearCogSizing = (rearCog * 4)
 
@@ -23,12 +23,17 @@ const RearCogCounter = () => {
     return (
         <div className='RearCog_Component'>
             <div className='RearCog_details'>
-                <div className="RearCogComponent" data-testid="RearCogComponent" id='RearCogComponent' >Rear Cog<span className='Red_semi'> :</span> {rearCog}</div>
+                <div className="inputLabel" data-testid="RearCogComponent" id='RearCogComponent' >Rear Cog<span className='Red_semi'> :</span> {rearCog}</div>
                 <div className='RearShifters'>
-                    <div className='Rear_Shifters'>                    
-                        <button className='RearShiftDown' data-testid="rearShiftDown" onClick={rearDecroment}>-</button>
-                        <button className='RearShiftUp' data-testid="rearShiftUp" onClick={rearIncroment}>+</button>
-                        <input className="RearShiftInput" min={9} max={46} type="number" value={rearCog} onChange={(e) => textInput(e.target.valueAsNumber)}></input>
+                    <div className='Rear_Shifters'>      
+                        <div>            
+                            <button className='ShifterButton' data-testid="rearShiftDown" onClick={rearDecroment}>-</button>
+                            <button className='ShifterButton' data-testid="rearShiftUp" onClick={rearIncroment}>+</button>
+                        </div>  
+                        <div>
+                            <button className='resetButton' data-testid="RearReset" onClick={rearReset}>Reset</button>
+                        </div>
+                        {/* <input className="RearShiftInput" min={9} max={46} type="number" value={rearCog} onChange={(e) => textInput(e.target.valueAsNumber)}></input> */}
                     </div>
                 </div>
             </div>

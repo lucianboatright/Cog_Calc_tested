@@ -11,8 +11,8 @@ import FrontCog from '../../Assets/Svg/FrontCogSvg.svg'
   
 
 const Crank = () => {
-   const { crankRpm, IncreaseCadance, DecreaseCadance } = useContext(CrankContext);
-   const { frontCog, frontIncroment, frontDecroment } = useContext(FrontCogContext);
+   const { crankRpm, IncreaseCadance, DecreaseCadance, resetCadance } = useContext(CrankContext);
+   const { frontCog, frontIncroment, frontDecroment, frontReset } = useContext(FrontCogContext);
 
    let FrontCogSizing = (frontCog * 4)
    const rpm = (crankRpm / 60)
@@ -29,17 +29,23 @@ const Crank = () => {
        <div className="Crank_Component">
            {/* <div> */}
             <div className="Crank_Display_Rpm">
-                <div data-testid="Display_Cadance">Cadance<span className='Red_semi'> :</span> {crankRpm}rpm</div>
+                <div className="inputLabel" data-testid="Display_Cadance">Cadance<span className='Red_semi'> :</span> {crankRpm}rpm</div>
                 <div className='FrontShifters'>
-                    <button className="DecreaseCadance" data-testid='DecreaseCadance' onClick={DecreaseCadance}>-</button>
-                    <button className="IncreaseCadance" data-testid='IncreaseCadance' onClick={IncreaseCadance}>+</button>
+                    <button className="ShifterButton" data-testid='DecreaseCadance' onClick={DecreaseCadance}>-</button>
+                    <button className="ShifterButton" data-testid='IncreaseCadance' onClick={IncreaseCadance}>+</button>
+                    <div>
+                    <button className='resetButton' data-testid="resetCadance" onClick={resetCadance}>Reset</button>
+                    </div>
                 </div>
             </div>
             <div className="Crank_Display_Cog">
-                <div className="FrontCogComponent" data-testid="FrontCogComponent" id='FrontCogComponent' >Front Cog<span className='Red_semi'> :</span> {frontCog}</div>
+                <div className="inputLabel" data-testid="FrontCogComponent" id='FrontCogComponent' >Front Cog<span className='Red_semi'> :</span> {frontCog}</div>
                 <div className='FrontShifters'>
-                    <button className='FrontShiftDown' data-testid="FrontShiftDown" onClick={frontDecroment}>-</button>
-                    <button className='FrontShiftUp' data-testid="FrontShiftUp" onClick={frontIncroment}>+</button>
+                    <button className='ShifterButton' data-testid="FrontShiftDown" onClick={frontDecroment}>-</button>
+                    <button className='ShifterButton' data-testid="FrontShiftUp" onClick={frontIncroment}>+</button>
+                    <div>
+                        <button className='resetButton' data-testid="FrontReset" onClick={frontReset}>Reset</button>
+                    </div>
                 </div>
             </div>
             {/* </div> */}

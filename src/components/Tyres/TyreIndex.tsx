@@ -59,7 +59,7 @@ function TyreIndex({childToParentTyre, childToParentTyreValue}: any) {
 
   return (
     <div className='tyre_selection' data-testid='tyre_selection_id'>
-        <div data-testid="WheelSize_Display">Tyre Size<span className='Red_semi'> :</span> {tyreText}</div>
+        <div className='inputLabel' data-testid="WheelSize_Display">Tyre Size<span className='Red_semi'> :</span> {tyreText}</div>
         <TyreSize
             data-testid="TyreSize_Dropdown"
             // label="Select Choose From Dropdown"
