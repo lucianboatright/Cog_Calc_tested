@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { RearCogContext } from '../Context/RearCogContext';
+import { RearCogContext } from '../Context/rearCogContext';
 import RearCogSvg from '../../Assets/Svg/RearCogSvg.svg'
 
 const RearCogCounter = () => {
