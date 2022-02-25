@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import './App.css';
-import FrontCogProvider from './components/Context/FrontCogContext';
+import FrontCogProvider from './components/Context/FrontCogContextProvider';
 import RearCogProvider from './components/Context/RearCogContextProvider';
 import Details from './components/Details/Details'
-import CrankProvider from './components/Context/CrankContext';
+import CrankProvider from './components/Context/CrankContextProvider';
 import WheelIndex from './components/Wheel/WheelIndex';
 import TyreIndex from './components/Tyres/TyreIndex';
 import Crank from './components/DriveTrain/Crank';

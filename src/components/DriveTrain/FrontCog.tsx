@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { FrontCogContext } from '../Context/FrontCogContext';
+import { FrontCogContext } from '../Context/FrontCogContextProvider';
 import FrontCog from '../../Assets/Svg/FrontCogSvg.svg'
 
 const FrontCogCounter = () => {

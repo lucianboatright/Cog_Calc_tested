@@ -1,6 +1,6 @@
 import React, {useContext} from "react";
-import { CrankContext } from "../Context/CrankContext";
-import { FrontCogContext } from '../Context/FrontCogContext';
+import { CrankContext } from "../Context/CrankContextProvider";
+import { FrontCogContext } from '../Context/FrontCogContextProvider';
 import FrontCog from '../../Assets/Svg/FrontCogSvg.svg'
 
 // var stylingObject = {
