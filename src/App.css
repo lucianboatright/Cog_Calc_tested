@@ -13,6 +13,12 @@
   border-left: 2px solid red;
   padding-left: 2rem;
   padding-right: 2rem;
+  width: 20rem;
+}
+
+.DatailsSection > div {
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
 }
 
 .DriveTrain {
@@ -28,12 +34,59 @@
   font-weight: 900;
 }
 
+.resetButton {
+  cursor: pointer;
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  border-radius: 10px;
+  width: 5rem;
+  font-size: large;
+  background-color: red;
+  opacity: 0.6;
+  color: aliceblue;
+  -webkit-box-shadow: 6px 6px 11px 0px #000000;
+  box-shadow: 6px 6px 11px 0px #000000;
+}
+
+.resetButton:hover {
+  opacity: 1;
+}
+
+.ShifterButton {
+  margin-top: 1rem;
+  background-color: red;
+  padding: 0.25rem 0.75rem;
+  border-radius: 50%;
+  border-style: ridge;
+  font-size: x-large;
+  cursor: pointer;
+  color: cornsilk;
+  text-align: center;
+  opacity: 0.6;
+  -webkit-box-shadow: 6px 6px 11px 0px #000000;
+  box-shadow: 6px 6px 11px 0px #000000;
+}
+
+.ShifterButton:hover {
+  opacity: 1;
+}
+
+.inputLabel {
+  opacity: 0.6;
+  border: solid 2px red;
+  border-radius: 10px;
+  padding-top: 0.2rem;
+  padding-bottom: 0.2rem;
+  -webkit-box-shadow: 6px 6px 11px 0px #000000;
+  box-shadow: 6px 6px 11px 0px #000000;
+}
+
 /* Title Header ************************************ */
 
 .Title {
   padding: 1rem;
   font-size: 3rem;
-  color: black;
+  color: red;
+  opacity: 0.6;
   text-align: center;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   border-bottom: 2px solid red;
@@ -42,22 +95,15 @@
 /* Details Section ************************************ */
 
 .DetailsTitle {
-  padding: 1rem;
+  padding: 0.5rem;
+  font-size: xx-large;
+  color: red;
+  opacity: 0.6;
 }
 
-.Cogs_Display {
+.Detail_item {
   padding: 1rem;
-  border-top: 2px black solid;
-}
-
-.Gear_ratio {
-  padding: 1rem;
-  border-top: 2px black solid;
-}
-
-.Cadance_rpm_Datails {
-  padding: 1rem;
-  border-top: 2px black solid;
+  border-top: 2px red solid;
 }
 
 /* Inside Drive Train Component ************************************ */
@@ -85,26 +131,6 @@
 
 /* Rear Cog Shifters ************************************  */
 
-.RearShifters {
-  padding-top: 1rem;
-}
-
-.RearShiftDown {
-  height: 2rem;
-  width: 2rem;
-  border-radius: 10px;
-}
-
-.RearShiftUp {
-  height: 2rem;
-  width: 2rem;
-  border-radius: 10px;
-}
-.RearShiftInput {
-  margin-left: 3rem;
-  width: 3rem;
-}
-
 .RearCogComponent {
   grid-area: top;
 }
@@ -128,26 +154,11 @@
   text-align: center;
   padding: 20px 0;
   font-size: 30px;
-  width: 20rem;
+  width: 15rem;
+  padding-left: 2rem;
 }
 
 /* Front Cog Shifters ************************************ */
-
-.FrontShifters {
-  padding-top: 1rem;
-}
-
-.FrontShiftDown {
-  height: 2rem;
-  width: 2rem;
-  border-radius: 10px;
-}
-
-.FrontShiftUp {
-  height: 2rem;
-  width: 2rem;
-  border-radius: 10px;
-}
 
 /* .FrontCog_Cog {
   width: 200px;
@@ -244,6 +255,7 @@ svg {
 
 .wheel_selection {
   margin-top: 2rem;
+  width: 15rem;
 }
 
 /* Tyre Size Details ************************************  */

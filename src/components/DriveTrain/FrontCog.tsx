@@ -3,7 +3,7 @@ import { FrontCogContext } from '../Context/FrontCogContext';
 import FrontCog from '../../Assets/Svg/FrontCogSvg.svg'
 
 const FrontCogCounter = () => {
-    const { frontCog, frontIncroment, frontDecroment } = useContext(FrontCogContext);
+    const { frontCog, frontIncroment, frontDecroment, frontReset } = useContext(FrontCogContext);
 
     let FrontCogSizing = (frontCog * 4)
 
@@ -12,11 +12,16 @@ const FrontCogCounter = () => {
             <div className='FrontCog_Cog'>
                 <img height={FrontCogSizing} width={FrontCogSizing} src={FrontCog}  style={{ animation: "rotation 2s infinite linear"}}/>                
             </div>
-            <div className="FrontCogComponent" data-testid="FrontCogComponent" id='FrontCogComponent' >Front Cog: {frontCog}</div>
+            <div className="inputLabel" data-testid="FrontCogComponent" id='FrontCogComponent' >Front Cog: {frontCog}</div>
             <div className='FrontShifters'>
-                <button className='FrontShiftDown' data-testid="FrontShiftDown" onClick={frontDecroment}>-</button>
-                <button className='FrontShiftUp' data-testid="FrontShiftUp" onClick={frontIncroment}>+</button>
+                <div>
+                    <button className='FrontShiftDown' data-testid="FrontShiftDown" onClick={frontDecroment}>-</button>
+                    <button className='FrontShiftUp' data-testid="FrontShiftUp" onClick={frontIncroment}>+</button>
+                </div>
             </div>
+            <div>
+                    <button className='FrontReset' data-testid="FrontReset" onClick={frontReset}>Reset</button>
+                </div>
         </div>
     )
 }
