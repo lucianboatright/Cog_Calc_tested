@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
-import RearCogProvider from './components/Context/rearCogContext';
+import RearCogProvider from './components/Context/RearCogContext';
 import FrontCogProvider from './components/Context/FrontCogContext';
 import Details from './components/Details/Details'
 import CrankProvider from './components/Context/CrankContext';

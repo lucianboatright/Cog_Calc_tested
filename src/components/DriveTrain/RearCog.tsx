@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { RearCogContext } from '../Context/rearCogContext';
+import { RearCogContext } from '../Context/RearCogContext';
 import RearCogSvg from '../../Assets/Svg/RearCogSvg.svg'
 
 const RearCogCounter = () => {
@@ -15,7 +15,6 @@ const RearCogCounter = () => {
             marginTop: `${RearCogHeight}rem`,
             animation: "rotation 2s infinite linear",
             display: "inline-block",
-            // height: "100%",
             verticalAlign: "middle"
         }
     }
