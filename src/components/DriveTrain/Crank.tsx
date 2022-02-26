@@ -14,14 +14,13 @@ const Crank = () => {
    const { crankRpm, IncreaseCadance, DecreaseCadance, resetCadance } = useContext(CrankContext);
    const { frontCog, frontIncroment, frontDecroment, frontReset } = useContext(FrontCogContext);
 
-   let FrontCogSizing = (frontCog * 4)
-   const rpm = (crankRpm / 60)
-
+   let FrontCogSizing = (frontCog * 4) 
+   const rps = (60 / crankRpm) * 2 
 //    var css = `body { background: ${crankRpm} }`
 
    var stylingObject = {
     img: {
-        animation: `rotation ${rpm}s infinite linear`
+        animation: `rotation ${rps}s infinite linear`
     }
   }
 

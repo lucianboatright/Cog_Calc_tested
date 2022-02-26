@@ -18,8 +18,8 @@ function App() {
   const childToParentWheelValue = (wheelDataStateValue: any) => {
     setWheelDataStateValue(wheelDataStateValue)
   }
-  console.log(wheelDataStateValue)
-  console.log(wheelDataState);
+  // console.log(wheelDataStateValue)
+  // console.log(wheelDataState);
 
   const [tyreDataState, setTyreDataState] = useState('');
   const [tyreDataStateValue, setTyreDataStateValue] = useState('');
@@ -29,8 +29,8 @@ function App() {
   const childToParentTyreValue = (tyreDataStateValue: any) => {
     setTyreDataStateValue(tyreDataStateValue)
   }
-  console.log(tyreDataStateValue)
-  console.log(tyreDataState);
+  // console.log(tyreDataStateValue)
+  // console.log(tyreDataState);
 
   return (
     <div className="App">

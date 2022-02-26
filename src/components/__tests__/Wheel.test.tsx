@@ -105,7 +105,7 @@ test('should start with no value diosplayed', () => {
 
 
 test('should display selected option on change', () => {
-    const { getByTestId } = render(<WheelIndex />)
+    const { getByTestId } = render(<WheelIndex childToParentWheelValue = {() => {}} childToParentWheel = {() => {}}/>)
     const dropdown = screen.getByTestId('WheelSize_Dropdown_Drawer')
     const display = dropdown.children[0]
     fireEvent.click(dropdown)
@@ -119,7 +119,7 @@ test('should display selected option on change', () => {
 
 
 test('should display 28 inch when selected (Top of dropdown)', () => {
-    const { getByTestId } = render(<WheelIndex />)
+    const { getByTestId } = render(<WheelIndex childToParentWheelValue = {() => {}} childToParentWheel = {() => {}} />)
     const dropdown = screen.getByTestId('WheelSize_Dropdown_Drawer')
     const display = dropdown.children[0]
     fireEvent.click(dropdown)
@@ -131,7 +131,7 @@ test('should display 28 inch when selected (Top of dropdown)', () => {
 })
 
 test('should display 16 inch when selected (Bottom of dropdown)', () => {
-    const { getByTestId } = render(<WheelIndex />)
+    const { getByTestId } = render(<WheelIndex childToParentWheelValue = {() => {}} childToParentWheel = {() => {}} />)
     const dropdown = screen.getByTestId('WheelSize_Dropdown_Drawer')
     const display = dropdown.children[0]
     fireEvent.click(dropdown)
