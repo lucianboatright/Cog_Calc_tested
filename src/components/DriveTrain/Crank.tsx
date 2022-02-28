@@ -27,7 +27,7 @@ const Crank = () => {
    return (
        <div className="Crank_Component">
            {/* <div> */}
-            <div className="Crank_Display_Rpm">
+            <div className="Crank_Display">
                 <div className="inputLabel" data-testid="Display_Cadance">Cadance<span className='Red_semi'> :</span> {crankRpm}rpm</div>
                 <div className='FrontShifters'>
                     <button className="ShifterButton" data-testid='DecreaseCadance' onClick={DecreaseCadance}>-</button>
@@ -37,7 +37,7 @@ const Crank = () => {
                     </div>
                 </div>
             </div>
-            <div className="Crank_Display_Cog">
+            <div className="Crank_Display">
                 <div className="inputLabel" data-testid="FrontCogComponent" id='FrontCogComponent' >Front Cog<span className='Red_semi'> :</span> {frontCog}</div>
                 <div className='FrontShifters'>
                     <button className='ShifterButton' data-testid="FrontShiftDown" onClick={frontDecroment}>-</button>

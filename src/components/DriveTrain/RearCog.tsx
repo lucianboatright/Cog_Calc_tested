@@ -12,7 +12,7 @@ const RearCogCounter = () => {
 
    var stylingObject = {
         img: {
-            marginTop: `${RearCogHeight}rem`,
+            // marginTop: `${RearCogHeight}rem`,
             animation: "rotation 2s infinite linear",
             display: "inline-block",
             verticalAlign: "middle"
@@ -21,7 +21,7 @@ const RearCogCounter = () => {
 
     return (
         <div className='RearCog_Component'>
-            <div className='RearCog_details'>
+            <div className='Crank_Display'>
                 <div className="inputLabel" data-testid="RearCogComponent" id='RearCogComponent' >Rear Cog<span className='Red_semi'> :</span> {rearCog}</div>
                 <div className='RearShifters'>
                     <div className='Rear_Shifters'>      

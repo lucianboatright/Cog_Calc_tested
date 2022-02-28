@@ -1,7 +1,4 @@
 import { cleanup, fireEvent, getAllByRole, getAllByTestId, getByTestId, render, screen } from "@testing-library/react";
-import App from "../../App";
-import userEvent from "@testing-library/user-event";
-
 import WheelIndex from '../../components/Wheel/WheelIndex'
 
 
@@ -9,7 +6,9 @@ it.todo('should test that the components mounts')
 
 it.todo('should start with wheel size 700c')
 
-it.todo('will be able to select between 700c 29,27.5,26,24,20,16')
+it.todo('will be able to show selected 28, 27,29,26,650,24,16 ')
+
+it.todo('will change selection from 27 inch to 24 inch')
 // Wheel Sizes convert into mm
 // 28 = 635
 // 27 = 630
@@ -53,12 +52,6 @@ it.todo('will be able to select between 700c 29,27.5,26,24,20,16')
 // 4.80 = 	121.92
 // 4.90 = 	124.46
 
-it.todo('should start on tyre 28c')
-
-it.todo('will be able to select between 20-48c ')
-
-it.todo('should change on selected wheel size and tyre size')
-
 const wheelOptions = [
     { text: "28 Inch", value: "635" },
     { text: "27 Inch", value: "630" },
@@ -69,22 +62,9 @@ const wheelOptions = [
     { text: "16 Inch", value: "349" }
 ];
 
-// const WheelSize_Component = () => (
-//     <WheelIndex
-//     data-testid="WheelSize_Dropdown"
-//     label="Select size"
-//     placeholder="Select size"
-//     options={wheelOptions}
-//     handleChange={(e: string) => setValue(e)}
-//     handleChangeText={(e: string) => setText(e)}
-//     onChange={(e: string) => childToParent(e)}
-//     // handleChange={(e: string) => setText(e)}
-//   />
-// );
 
 beforeEach(() => {
-    // render(<App />)
-    // render(<WheelIndex />)
+    render(<WheelIndex childToParentWheelValue = {() => {}} childToParentWheel = {() => {}} />)
 })
 
 afterEach(() => {
@@ -92,36 +72,18 @@ afterEach(() => {
 })
 
 test('should mount component', () => {
-    render(<WheelIndex />)
     const wheelDisplay = screen.getByTestId(/WheelSize_Display/i)
     expect(wheelDisplay).toHaveTextContent('Wheel Size :')
 })
 
 test('should start with no value diosplayed', () => {
-    const { getByTestId } = render(<WheelIndex />)
     const display = screen.getByTestId('WheelSize_Display')
     expect(display).toHaveTextContent("Wheel Size :")
 })
 
 
-test('should display selected option on change', () => {
-    const { getByTestId } = render(<WheelIndex childToParentWheelValue = {() => {}} childToParentWheel = {() => {}}/>)
+test('should display 28 inch when selected (Top of dropdown) choice 1', () => {
     const dropdown = screen.getByTestId('WheelSize_Dropdown_Drawer')
-    const display = dropdown.children[0]
-    fireEvent.click(dropdown)
-    const dropDownOptions = getAllByTestId(dropdown, 'WheelSize_Dropdown_Styled')
-    fireEvent.click(dropDownOptions[2])
-
-    const valueDisplay = screen.getByTestId('WheelSize_Display')
-    expect(valueDisplay).toHaveTextContent("Wheel Size : 29 Inch / 700c");
-})
-
-
-
-test('should display 28 inch when selected (Top of dropdown)', () => {
-    const { getByTestId } = render(<WheelIndex childToParentWheelValue = {() => {}} childToParentWheel = {() => {}} />)
-    const dropdown = screen.getByTestId('WheelSize_Dropdown_Drawer')
-    const display = dropdown.children[0]
     fireEvent.click(dropdown)
     const dropDownOptions = getAllByTestId(dropdown, 'WheelSize_Dropdown_Styled')
     fireEvent.click(dropDownOptions[0])
@@ -130,14 +92,75 @@ test('should display 28 inch when selected (Top of dropdown)', () => {
     expect(valueDisplay).toHaveTextContent("Wheel Size : 28 Inch");
 })
 
-test('should display 16 inch when selected (Bottom of dropdown)', () => {
-    const { getByTestId } = render(<WheelIndex childToParentWheelValue = {() => {}} childToParentWheel = {() => {}} />)
+test('should display selected option on change 27 inch choice 2', () => {
     const dropdown = screen.getByTestId('WheelSize_Dropdown_Drawer')
-    const display = dropdown.children[0]
+    fireEvent.click(dropdown)
+    const dropDownOptions = getAllByTestId(dropdown, 'WheelSize_Dropdown_Styled')
+    fireEvent.click(dropDownOptions[1])
+
+    const valueDisplay = screen.getByTestId('WheelSize_Display')
+    expect(valueDisplay).toHaveTextContent("Wheel Size : 27 Inch");
+})
+
+test('should display selected option on change 29 inch choice 3', () => {
+    const dropdown = screen.getByTestId('WheelSize_Dropdown_Drawer')
+    fireEvent.click(dropdown)
+    const dropDownOptions = getAllByTestId(dropdown, 'WheelSize_Dropdown_Styled')
+    fireEvent.click(dropDownOptions[2])
+
+    const valueDisplay = screen.getByTestId('WheelSize_Display')
+    expect(valueDisplay).toHaveTextContent("Wheel Size : 29 Inch / 700c");
+})
+
+test('should display 26 inch when selected (Bottom of dropdown choice 4)', () => {
+    const dropdown = screen.getByTestId('WheelSize_Dropdown_Drawer')
+    fireEvent.click(dropdown)
+    const dropDownOptions = getAllByTestId(dropdown, 'WheelSize_Dropdown_Styled')
+    fireEvent.click(dropDownOptions[3])
+
+    const valueDisplay = screen.getByTestId('WheelSize_Display')
+    expect(valueDisplay).toHaveTextContent("Wheel Size : 26 Inch");
+})
+
+test('should display 650b / 27.5 Inch" when selected (Bottom of dropdown) choice 5', () => {
+    const dropdown = screen.getByTestId('WheelSize_Dropdown_Drawer')
+    fireEvent.click(dropdown)
+    const dropDownOptions = getAllByTestId(dropdown, 'WheelSize_Dropdown_Styled')
+    fireEvent.click(dropDownOptions[4])
+
+    const valueDisplay = screen.getByTestId('WheelSize_Display')
+    expect(valueDisplay).toHaveTextContent("Wheel Size : 650b / 27.5 Inch");
+})
+
+test('should display 24 inch when selected (Bottom of dropdown)', () => {
+    const dropdown = screen.getByTestId('WheelSize_Dropdown_Drawer')
+    fireEvent.click(dropdown)
+    const dropDownOptions = getAllByTestId(dropdown, 'WheelSize_Dropdown_Styled')
+    fireEvent.click(dropDownOptions[5])
+
+    const valueDisplay = screen.getByTestId('WheelSize_Display')
+    expect(valueDisplay).toHaveTextContent("Wheel Size : 24 Inch");
+})
+
+
+test('should display 16 inch when selected (Bottom of dropdown)', () => {
+    const dropdown = screen.getByTestId('WheelSize_Dropdown_Drawer')
     fireEvent.click(dropdown)
     const dropDownOptions = getAllByTestId(dropdown, 'WheelSize_Dropdown_Styled')
     fireEvent.click(dropDownOptions[6])
 
     const valueDisplay = screen.getByTestId('WheelSize_Display')
     expect(valueDisplay).toHaveTextContent("Wheel Size : 16 Inch");
+})
+
+
+test('should display 27 inch then 24 inch after change)', () => {
+    const dropdown = screen.getByTestId('WheelSize_Dropdown_Drawer')
+    const valueDisplay = screen.getByTestId('WheelSize_Display')
+    fireEvent.click(dropdown)
+    const dropDownOptions = getAllByTestId(dropdown, 'WheelSize_Dropdown_Styled')
+    fireEvent.click(dropDownOptions[1])
+    expect(valueDisplay).toHaveTextContent("Wheel Size : 27 Inch");
+    fireEvent.click(dropDownOptions[5])
+    expect(valueDisplay).toHaveTextContent("Wheel Size : 24 Inch");
 })

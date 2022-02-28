@@ -20,6 +20,7 @@ function WheelIndex({childToParentWheel, childToParentWheelValue}: any) {
 
   return (
     <div className='wheel_selection' data-testid='wheel_selection_id'>
+      <div className='Wheel_Display'>
         <div className='inputLabel' data-testid="WheelSize_Display">Wheel Size<span className='Red_semi'> : </span> {text}</div>
         <WheelSize
             data-testid="WheelSize_Dropdown"
@@ -31,7 +32,7 @@ function WheelIndex({childToParentWheel, childToParentWheelValue}: any) {
             onChange={(e: string) => childToParentWheel(e)}
             onChangeValue={(e: string) => childToParentWheelValue(e)}
         />
-
+      </div>
     </div>
 
   );

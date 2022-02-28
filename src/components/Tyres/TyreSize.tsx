@@ -7,7 +7,7 @@ import {
     StyledDropdownLabel,
     StyledDropDownOption,
     StyledDropDownText
-  } from "../Wheel/styled";
+  } from "./styledTyre";
   import { FC, useState } from "react";
   
   type Options = {
