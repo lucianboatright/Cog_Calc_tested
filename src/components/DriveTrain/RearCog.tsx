@@ -44,5 +44,3 @@ const RearCogCounter = () => {
 }
 
 export default RearCogCounter;
-
-
