@@ -9,7 +9,6 @@ const RearCogCounter = () => {
 
     let RearCogHeight = (4 - (rearCog / 15))
 
-
    var stylingObject = {
         img: {
             // marginTop: `${RearCogHeight}rem`,
