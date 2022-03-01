@@ -12,7 +12,6 @@ it.todo('Should show 1,10,20,30 ans last when selected')
 
 it.todo('should display 23 to 37 to 5.00 Inch when selected')
 
-
   const tyreOptions = [
     { text: "20mm", value: "20.00" },
     { text: "23mm", value: "23.00" },
