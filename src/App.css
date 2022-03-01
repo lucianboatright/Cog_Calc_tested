@@ -11,9 +11,13 @@
 
 .DatailsSection {
   border-left: 2px solid red;
-  padding-left: 2rem;
-  padding-right: 2rem;
+  /* padding-left: 2rem; */
+  /* padding-right: 2rem; */
+  opacity: 0.6;
   width: 20rem;
+}
+.DatailsSection:hover {
+  opacity: 1;
 }
 
 .DatailsSection > div {
@@ -81,17 +85,48 @@
   -webkit-box-shadow: 6px 6px 11px 0px #000000;
   box-shadow: 6px 6px 11px 0px #000000;
 }
+.Crank_Display:hover {
+  opacity: 1;
+}
 
 .Wheel_Display {
-  width: 15rem;
+  width: 13rem;
   opacity: 0.6;
   border: solid 2px red;
   border-radius: 10px;
-  padding: 1rem;
+  padding: 1rem 1rem 0rem 1rem;
   /* padding-top: 0.2rem;
   padding-bottom: 0.2rem; */
   -webkit-box-shadow: 6px 6px 11px 0px #000000;
   box-shadow: 6px 6px 11px 0px #000000;
+  flex-shrink: 1;
+  /* position: absolute;
+  z-index: 999; */
+  margin: 10px;
+}
+
+.Wheel_Display:hover {
+  opacity: 1;
+}
+
+.Tyre_Display {
+  /* margin-top: 10rem; */
+  width: 13rem;
+  opacity: 0.6;
+  border: solid 2px red;
+  border-radius: 10px;
+  padding: 1rem 1rem 0rem 1rem;
+  /* padding-top: 0.2rem;
+  padding-bottom: 0.2rem; */
+  -webkit-box-shadow: 6px 6px 11px 0px #000000;
+  box-shadow: 6px 6px 11px 0px #000000;
+  position: absolute;
+  z-index: -1;
+  margin: 10px;
+}
+
+.Tyre_Display:hover {
+  opacity: 1;
 }
 
 /* Title Header ************************************ */
@@ -161,7 +196,7 @@
   gap: 10px;
   /* background-color: #2196f3; */
   padding: 10px;
-  width: 20rem;
+  /* width: 20rem; */
   height: 30rem;
 }
 
@@ -247,6 +282,7 @@ svg {
   padding: 10px;
   width: 30rem;
   height: 30rem;
+  margin-right: 1rem;
 }
 
 .Crank_Component > div {
@@ -276,8 +312,8 @@ svg {
 }
 
 .wheel_selection {
-  margin-top: 10px;
-  width: 15rem;
+  /* margin-top: 10px;
+  width: 15rem; */
 }
 
 /* Tyre Size Details ************************************  */
