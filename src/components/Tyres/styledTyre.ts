@@ -26,12 +26,12 @@ export const StyledDropDownContainer = styled.div`
 export const StyledDropDownButton = styled.button`
   position: relative;
   width: 100%;
-  padding: 20px 30px;
+  padding: 10px 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   background: #fff;
-  border: 2px solid #e4e4e4;
+  border: 2px solid red;
   outline: none;
   border-radius: 15px;
   cursor: pointer;
@@ -77,7 +77,7 @@ export const StyledDropDownButtonArrow = styled.div<Active>`
 `;
 
 export const StyledDropDownDrawer = styled.div<Active>`
-  position: absolute;
+  // position: absolute;
   top: auto;
   z-index: 1;
   bottom: 100%
@@ -88,7 +88,7 @@ export const StyledDropDownDrawer = styled.div<Active>`
   visibility: ${(props) => (props.active ? "visible" : "hidden")};
   pointer-events: ${(props) => (props.active ? "auto" : "none")};
   background: #fff;
-  border: 2px solid #e4e4e4;
+  border: 2px solid red;
   outline: none;
   border-radius: 15px;
   overflow-y: auto;

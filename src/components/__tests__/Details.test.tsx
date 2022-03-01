@@ -89,3 +89,62 @@ test('should show rpm starting at 90rpm', () => {
     const Cadance_rpm = screen.getByTestId(/Cadance_rpm_Datails/i)
     expect(Cadance_rpm).toHaveTextContent('Cadance : 90rpm')
 })
+
+test('Wheel size shoudl start empty with "Select Wheel Size"', () => {
+    const WheelSize = screen.getByTestId(/WheelSize_display_Details/i)
+    expect(WheelSize).toHaveTextContent('Wheel Size : Select Wheel Size')
+})
+
+test('Wheel size shoudl start empty with "Select Wheel Size"', () => {
+    const TyreSize = screen.getByTestId(/TyreSize_display/i)
+    expect(TyreSize).toHaveTextContent('Tyre Size : Select Tyre Value')
+})
+
+
+test('rear:20 - cadance:100 - front:52 - wheel:29 - tyre:28', () => {
+    const rearCogUp = screen.getByTestId(/rearShiftUp/i)
+    const IncreaseCadance = screen.getByTestId(/IncreaseCadance/i)
+    const frontShifterUp = screen.getByTestId(/FrontShiftUp/i)
+
+    const WheelSize_Dropdown = screen.getByTestId(/WheelSize_Dropdown_Drawer/i)
+    const WheelSize_Dropdown_Options = screen.getAllByTestId('WheelSize_Dropdown_Styled')
+   
+    const TyreSize_Dropdown = screen.getByTestId(/TyreSize_Dropdown_Drawer/i)
+    const TyreSize_Dropdown_Options = screen.getAllByTestId('TyreSize_Dropdown_Styled')
+
+    for(let i = 0; i < 2; i++) {
+        userEvent.click(frontShifterUp)
+    }
+    for(let i = 0; i < 10; i++) {
+        userEvent.click(IncreaseCadance)
+    }
+    for(let i = 0; i < 5; i++) {
+        userEvent.click(rearCogUp)
+    }
+
+    fireEvent.click(WheelSize_Dropdown)
+    fireEvent.click(WheelSize_Dropdown_Options[2])
+
+    fireEvent.click(TyreSize_Dropdown)
+    fireEvent.click(TyreSize_Dropdown_Options[5])
+
+    const Details_Cogs_Rear = screen.getByTestId('Details_Cogs_Rear')
+    const Details_Cogs_Front = screen.getByTestId('Details_Cogs_Front')
+    const WheelDisplay = screen.getByTestId('WheelSize_display_Details')
+    const TyreDisplay = screen.getByTestId('TyreSize_display')
+    const Wheel_circ = screen.getByTestId('Wheel_circ')
+    const Gear_ratio = screen.getByTestId('Gear_ratio')
+    const Gear_Inches = screen.getByTestId('Gear_Inches')
+    const Cadance_rpm_Datails = screen.getByTestId('Cadance_rpm_Datails')
+    const Speed_Datails = screen.getByTestId('Speed_Datails')
+
+    expect(Details_Cogs_Rear).toHaveTextContent("Rear Cog : 20 -");
+    expect(Details_Cogs_Front).toHaveTextContent("Front Cog : 52");
+    expect(WheelDisplay).toHaveTextContent("Wheel Size : 29 Inch / 700c");
+    expect(TyreDisplay).toHaveTextContent('Tyre Size : 28mm')
+    expect(Wheel_circ).toHaveTextContent('Wheel Cuircumferance : 2.13 Meters')
+    expect(Gear_ratio).toHaveTextContent('Gear Ratios : 2.60')
+    expect(Gear_Inches).toHaveTextContent('Gear Inches : 0.06')
+    expect(Cadance_rpm_Datails).toHaveTextContent('Cadance : 100rpm')
+    expect(Speed_Datails).toHaveTextContent('Speed : 33.23 Km/h')
+})
