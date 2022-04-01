@@ -110,7 +110,7 @@ setup enviorment - $ npm start
 Run tests - $ npm test
 
 ## Planning
-
+<img src='readmeImages/screen_shot_main.png' />
 <img src='readmeImages/planningOne.png' />
 <img src='readmeImages/planningTwo.png' />
 
